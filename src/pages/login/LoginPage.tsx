@@ -140,7 +140,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => setMode("user")}
-                className="ml-auto text-label text-misty-slate hover:text-linghuo-amber"
+                className="ml-auto text-label text-misty-slate hover:text-deep-char"
               >
                 返回
               </button>

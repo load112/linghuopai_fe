@@ -89,7 +89,7 @@ export function UserHomePage() {
               </div>
               <div className="mt-2 h-1.5 bg-ash-veil overflow-hidden">
                 <div
-                  className="h-full bg-linghuo-amber transition-all duration-500 ease-out-quart"
+                  className="h-full bg-deep-char transition-all duration-500 ease-out-quart"
                   style={{ width: `${completeness}%` }}
                 />
               </div>
@@ -127,7 +127,7 @@ export function UserHomePage() {
           </div>
           <Link
             to="/u/tasks"
-            className="text-body text-misty-slate font-medium hover:text-linghuo-amber transition-colors"
+            className="text-body text-misty-slate font-medium hover:text-deep-char transition-colors"
           >
             查看更多
           </Link>
@@ -157,7 +157,7 @@ export function UserHomePage() {
                   </svg>
                 </div>
                 <div className="text-right">
-                  <span className="block text-linghuo-amber font-bold text-title tabular-nums">
+                  <span className="block text-deep-char font-bold text-title tabular-nums">
                     {t.budget}
                   </span>
                   <span className="text-label text-graphite">

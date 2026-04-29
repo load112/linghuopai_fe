@@ -42,7 +42,7 @@ export function AdminEnterprisesPage() {
                 <tr key={e.id} className="text-deep-char">
                   <td className="py-md">
                     <div className="flex items-center gap-sm">
-                      <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+                      <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                         <Icon name="domain" size={16} />
                       </span>
                       <span className="font-medium">{e.name}</span>
@@ -57,7 +57,7 @@ export function AdminEnterprisesPage() {
                   <td className="py-md text-graphite">{e.jobs}</td>
                   <td className="py-md text-graphite">{e.registeredAt}</td>
                   <td className="py-md text-right">
-                    <button className="text-label text-misty-slate hover:text-linghuo-amber">
+                    <button className="text-label text-misty-slate hover:text-deep-char">
                       详情
                     </button>
                   </td>
@@ -73,7 +73,7 @@ export function AdminEnterprisesPage() {
               key={e.id}
               className="bg-bone-cream-dim border border-ash-veil px-md py-sm flex items-center gap-md"
             >
-              <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+              <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                 <Icon name="domain" size={18} />
               </span>
               <div className="flex-1 min-w-0">

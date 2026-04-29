@@ -7,7 +7,7 @@ interface BadgeProps {
 }
 
 const toneMap: Record<NonNullable<BadgeProps["tone"]>, string> = {
-  amber: "border border-linghuo-amber text-linghuo-amber bg-bone-cream-dim",
+  amber: "border border-deep-char text-deep-char bg-bone-cream-dim",
   slate: "border border-misty-slate text-misty-slate bg-bone-cream-dim",
   graphite: "border border-ash-veil text-graphite bg-bone-cream-dim",
   info: "border border-misty-slate text-misty-slate bg-bone-cream-dim",

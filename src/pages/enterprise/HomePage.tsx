@@ -113,7 +113,7 @@ export function EnterpriseHomePage() {
               <button
                 type="button"
                 onClick={() => navigate("/b/jobs")}
-                className="text-body text-misty-slate hover:text-linghuo-amber transition-colors flex items-center gap-1"
+                className="text-body text-misty-slate hover:text-deep-char transition-colors flex items-center gap-1"
               >
                 查看全部 <Icon name="arrow_forward" size={16} />
               </button>
@@ -152,7 +152,7 @@ export function EnterpriseHomePage() {
                       <p className="text-label text-warm-ash">报名人数</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-headline text-title text-linghuo-amber tabular-nums">
+                      <p className="font-headline text-title text-deep-char tabular-nums">
                         {j.passed}
                       </p>
                       <p className="text-label text-warm-ash">AI 初筛通过</p>
@@ -215,7 +215,7 @@ export function EnterpriseHomePage() {
           </Card>
 
           {/* 发布 CTA */}
-          <Card className="p-md md:p-lg border-l-2 border-linghuo-amber">
+          <Card className="p-md md:p-lg border-l-2 border-deep-char">
             <span className="inline-flex items-center gap-1 text-label text-graphite uppercase tracking-widest">
               <Icon name="auto_awesome" size={14} />
               Smart Recruitment

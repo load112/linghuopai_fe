@@ -318,6 +318,6 @@ export const adminTasks: AdminTaskRow[] = [
 
 export const taskStatusMeta: Record<TaskStatus, { label: string; tone: string }> = {
   PUBLISHED: { label: "已发布", tone: "bg-secondary/10 text-misty-slate" },
-  IN_PROGRESS: { label: "进行中", tone: "bg-linghuo-amber/10 text-linghuo-amber" },
+  IN_PROGRESS: { label: "进行中", tone: "bg-deep-char/10 text-deep-char" },
   CLOSED: { label: "已关闭", tone: "bg-warm-ash/20 text-graphite" },
 };

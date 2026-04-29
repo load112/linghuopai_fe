@@ -71,7 +71,7 @@ export function CandidatesPage() {
               className={cn(
                 "shrink-0 px-md h-9 text-label font-medium transition-colors",
                 stage === s.key
-                  ? "bg-linghuo-amber text-white"
+                  ? "bg-deep-char text-white"
                   : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
               )}
             >
@@ -97,7 +97,7 @@ export function CandidatesPage() {
                   className={cn(
                     "w-full text-left border bg-surface-container-lowest p-md md:p-lg transition-all duration-300 ease-out-quart relative",
                     isActive
-                      ? "border-linghuo-amber shadow-ambient-hover"
+                      ? "border-deep-char shadow-ambient-hover"
                       : "border-ash-veil hover:shadow-ambient-hover",
                   )}
                 >
@@ -106,7 +106,7 @@ export function CandidatesPage() {
                     className={cn(
                       "absolute top-md right-md inline-flex items-center justify-center px-2 py-1 text-label font-bold",
                       scoreBadgeTone === "amber"
-                        ? "bg-linghuo-amber text-white"
+                        ? "bg-deep-char text-white"
                         : "border border-misty-slate text-misty-slate bg-bone-cream-dim",
                     )}
                   >
@@ -188,7 +188,7 @@ export function CandidatesPage() {
                     <Icon
                       name="auto_awesome"
                       filled
-                      className="text-linghuo-amber"
+                      className="text-deep-char"
                       size={18}
                     />
                     AI 初筛报告（摘要）

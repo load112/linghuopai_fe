@@ -41,7 +41,7 @@ export function EnterpriseInfoPage() {
         <div className="flex flex-col md:flex-row md:items-center gap-md">
           <button
             type="button"
-            className="h-24 w-24 bg-primary-fixed text-linghuo-amber border border-ash-veil flex items-center justify-center shrink-0 hover:brightness-105 transition-all relative group"
+            className="h-24 w-24 bg-primary-fixed text-deep-char border border-ash-veil flex items-center justify-center shrink-0 hover:brightness-105 transition-all relative group"
             aria-label="上传企业 Logo"
           >
             <Icon name="domain" filled size={32} />
@@ -57,7 +57,7 @@ export function EnterpriseInfoPage() {
               <Icon
                 name="verified"
                 filled
-                className="text-linghuo-amber"
+                className="text-deep-char"
                 size={20}
                 ariaLabel="已认证企业"
               />
@@ -205,10 +205,10 @@ export function EnterpriseInfoPage() {
           </Card>
 
           {/* 企业智能洞察（暖橙弱底 + 完整描边，无侧条） */}
-          <Card className="p-md md:p-lg border-linghuo-amber">
+          <Card className="p-md md:p-lg border-deep-char">
             <header className="flex items-center gap-sm mb-sm">
-              <Icon name="auto_awesome" className="text-linghuo-amber" size={20} />
-              <h4 className="font-title text-label font-bold text-linghuo-amber uppercase tracking-tight">
+              <Icon name="auto_awesome" className="text-deep-char" size={20} />
+              <h4 className="font-title text-label font-bold text-deep-char uppercase tracking-tight">
                 企业智能洞察
               </h4>
             </header>
@@ -218,7 +218,7 @@ export function EnterpriseInfoPage() {
             </p>
             <button
               type="button"
-              className="mt-md text-label font-bold text-linghuo-amber inline-flex items-center gap-1 hover:gap-2 transition-all"
+              className="mt-md text-label font-bold text-deep-char inline-flex items-center gap-1 hover:gap-2 transition-all"
             >
               查看详细建议
               <Icon name="arrow_forward" size={14} />

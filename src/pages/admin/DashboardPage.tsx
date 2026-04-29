@@ -141,7 +141,7 @@ export function AdminDashboardPage() {
                 </div>
                 <div className="h-1.5 bg-bone-cream-dim overflow-hidden">
                   <div
-                    className="h-full bg-linghuo-amber"
+                    className="h-full bg-deep-char"
                     style={{ width: `${row.percent}%` }}
                   />
                 </div>

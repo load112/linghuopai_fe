@@ -41,7 +41,7 @@ export function AgreementsPage() {
         </h3>
         <ul className="space-y-sm text-body text-graphite">
           <li className="flex items-start gap-sm">
-            <Icon name="article" size={16} className="text-linghuo-amber mt-0.5" />
+            <Icon name="article" size={16} className="text-deep-char mt-0.5" />
             协议列表：与每个任务一一对应
           </li>
           <li className="flex items-start gap-sm">

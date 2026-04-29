@@ -36,7 +36,7 @@ export function AdminLayout() {
       >
         <div className="px-lg py-lg border-b border-white/10">
           <div className="flex items-center gap-3">
-            <span className="h-9 w-9 border border-white/20 text-linghuo-amber flex items-center justify-center">
+            <span className="h-9 w-9 border border-white/20 text-bone-cream flex items-center justify-center">
               <Icon name="admin_panel_settings" />
             </span>
             <div>
@@ -57,7 +57,7 @@ export function AdminLayout() {
                 cn(
                   "flex items-center gap-3 px-md py-sm text-body font-medium transition-colors",
                   isActive
-                    ? "bg-linghuo-amber/15 text-linghuo-amber"
+                    ? "bg-white/10 text-bone-cream"
                     : "text-bone-cream/70 hover:text-bone-cream hover:bg-white/5",
                 )
               }

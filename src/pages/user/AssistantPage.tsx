@@ -86,7 +86,7 @@ export function AssistantPage() {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
       <Card className="lg:col-span-2 flex flex-col h-[70vh]">
         <header className="px-lg py-md border-b border-ash-veil flex items-center gap-sm">
-          <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+          <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
             <Icon name="smart_toy" filled size={18} />
           </span>
           <div>
@@ -107,16 +107,16 @@ export function AssistantPage() {
               )}
             >
               {m.from === "ai" ? (
-                <span className="h-8 w-8 shrink-0 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+                <span className="h-8 w-8 shrink-0 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                   <Icon name="smart_toy" size={16} filled />
                 </span>
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-md py-sm ",
+                  "max-w-[75%] px-md py-sm break-keep",
                   m.from === "ai"
-                    ? "bg-bone-cream-dim border border-ash-veil text-deep-char"
-                    : "bg-linghuo-amber text-white",
+                    ? "bg-[#F8F7F4] border border-ash-veil text-deep-char"
+                    : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
                 <p className="text-body leading-relaxed">{m.text}</p>
@@ -133,7 +133,7 @@ export function AssistantPage() {
                           key={t.id}
                           type="button"
                           onClick={() => navigate(`/u/tasks/${t.id}`)}
-                          className="w-full text-left bg-surface-container-lowest border border-ash-veil px-sm py-sm flex items-center gap-sm hover:border-linghuo-amber transition-colors"
+                          className="w-full text-left bg-surface-container-lowest border border-ash-veil px-sm py-sm flex items-center gap-sm hover:border-deep-char transition-colors"
                         >
                           <span className="h-9 w-9 bg-bone-cream-dim text-misty-slate flex items-center justify-center shrink-0">
                             <Icon name="work_outline" size={18} />
@@ -147,7 +147,7 @@ export function AssistantPage() {
                             </p>
                           </div>
                           {t.matchScore ? (
-                            <span className="text-label text-linghuo-amber font-bold whitespace-nowrap">
+                            <span className="text-label text-deep-char font-bold whitespace-nowrap">
                               {t.matchScore}%
                             </span>
                           ) : null}
@@ -160,10 +160,10 @@ export function AssistantPage() {
           ))}
           {pending ? (
             <div className="flex gap-sm">
-              <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+              <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                 <Icon name="smart_toy" size={16} filled />
               </span>
-              <div className="px-md py-sm bg-bone-cream-dim border border-ash-veil text-graphite text-label">
+              <div className="px-md py-sm bg-[#F8F7F4] border border-ash-veil text-graphite text-label">
                 正在思考…
               </div>
             </div>
@@ -172,13 +172,13 @@ export function AssistantPage() {
         </div>
 
         <div className="px-lg pb-md pt-sm border-t border-ash-veil space-y-sm">
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 gap-2">
             {quickPrompts.map((p) => (
               <button
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-label text-graphite hover:bg-surface-container-low"
+                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-label text-graphite hover:bg-surface-container-low truncate"
               >
                 {p}
               </button>
@@ -218,7 +218,7 @@ export function AssistantPage() {
               { i: "task", t: "推荐符合你方向的任务" },
             ].map((r) => (
               <li key={r.i} className="flex items-start gap-sm">
-                <Icon name={r.i} size={16} className="text-linghuo-amber mt-0.5" />
+                <Icon name={r.i} size={16} className="text-deep-char mt-0.5" />
                 <span>{r.t}</span>
               </li>
             ))}

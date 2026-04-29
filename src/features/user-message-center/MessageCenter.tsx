@@ -16,9 +16,9 @@ import {
 import { cn } from "@/shared/utils/cn";
 
 const toneClass: Record<MessageKind, string> = {
-  invite: "text-linghuo-amber border-linghuo-amber",
-  interview: "text-linghuo-amber border-linghuo-amber",
-  report: "text-linghuo-amber border-linghuo-amber",
+  invite: "text-deep-char border-deep-char",
+  interview: "text-deep-char border-deep-char",
+  report: "text-deep-char border-deep-char",
   thread: "text-misty-slate border-misty-slate",
   system: "text-misty-slate border-misty-slate",
   announcement: "text-graphite border-graphite",
@@ -110,7 +110,7 @@ export function MessageCenter() {
               <button
                 type="button"
                 onClick={() => setOpenId(null)}
-                className="text-label text-misty-slate hover:text-linghuo-amber flex items-center gap-1"
+                className="text-label text-misty-slate hover:text-deep-char flex items-center gap-1"
               >
                 <Icon name="arrow_back_ios_new" size={14} />
                 返回列表
@@ -121,7 +121,7 @@ export function MessageCenter() {
                 onClick={() =>
                   setMessages((prev) => prev.map((m) => ({ ...m, read: true })))
                 }
-                className="text-label text-misty-slate hover:text-linghuo-amber"
+                className="text-label text-misty-slate hover:text-deep-char"
               >
                 全部已读
               </button>

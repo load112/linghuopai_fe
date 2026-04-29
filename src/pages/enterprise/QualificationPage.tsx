@@ -55,9 +55,9 @@ export function QualificationPage() {
                   <span
                     className={`h-9 w-9 flex items-center justify-center shrink-0 transition-colors ${
                       isDone
-                        ? "bg-linghuo-amber text-white"
+                        ? "bg-deep-char text-white"
                         : isActive
-                          ? "bg-bone-cream-dim text-linghuo-amber border border-ash-veil"
+                          ? "bg-bone-cream-dim text-deep-char border border-ash-veil"
                           : "bg-bone-cream-dim text-graphite border border-ash-veil"
                     }`}
                   >
@@ -78,7 +78,7 @@ export function QualificationPage() {
                   {i < steps.length - 1 ? (
                     <span
                       className={`h-px flex-1 ${
-                        isDone ? "bg-linghuo-amber/40" : "bg-ash-veil"
+                        isDone ? "bg-deep-char/40" : "bg-ash-veil"
                       } hidden sm:block`}
                     />
                   ) : null}
@@ -189,7 +189,7 @@ export function QualificationPage() {
                       [doc.key]: !prev[doc.key],
                     }))
                   }
-                  className="text-label text-linghuo-amber hover:underline"
+                  className="text-label text-deep-char hover:underline"
                 >
                   {uploaded[doc.key] ? "重新上传" : "选择文件"}
                 </button>

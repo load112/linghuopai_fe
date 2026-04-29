@@ -45,15 +45,22 @@ export function UserLayout() {
                 to={tab.to}
                 className={({ isActive }) =>
                   cn(
-                    "px-md py-sm text-body font-medium transition-all flex items-center gap-2",
+                    "relative px-md py-sm text-body font-medium transition-all flex items-center gap-2",
                     isActive
-                      ? "bg-bone-cream-dim text-linghuo-amber"
+                      ? "text-deep-char"
                       : "text-graphite hover:text-deep-char hover:bg-bone-cream-dim/60",
                   )
                 }
               >
-                <Icon name={tab.icon} size={18} />
-                {tab.label}
+                {({ isActive }) => (
+                  <>
+                    <Icon name={tab.icon} size={18} filled={isActive} />
+                    {tab.label}
+                    {isActive ? (
+                      <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-linghuo-amber" />
+                    ) : null}
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>
@@ -90,13 +97,13 @@ export function UserLayout() {
               className={({ isActive }) =>
                 cn(
                   "flex flex-col items-center justify-center py-2 gap-0.5 text-label",
-                  isActive ? "text-linghuo-amber" : "text-graphite",
+                  isActive ? "text-deep-char font-medium" : "text-graphite",
                 )
               }
             >
               {({ isActive }) => (
                 <>
-                  <Icon name={tab.icon} filled={isActive} size={22} />
+                  <Icon name={tab.icon} filled size={22} />
                   <span className="leading-none">{tab.label}</span>
                 </>
               )}

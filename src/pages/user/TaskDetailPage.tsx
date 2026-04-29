@@ -73,7 +73,7 @@ export function TaskDetailPage() {
                   name="verified"
                   filled
                   size={14}
-                  className="text-linghuo-amber"
+                  className="text-deep-char"
                   ariaLabel="已认证企业"
                 />
               ) : null}
@@ -93,7 +93,7 @@ export function TaskDetailPage() {
           </div>
           {task.matchHint ? (
             <div className="bg-bone-cream-dim border border-ash-veil px-md py-sm flex items-start gap-sm">
-              <span className="h-7 w-7 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center shrink-0 mt-0.5">
+              <span className="h-7 w-7 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center shrink-0 mt-0.5">
                 <Icon name="auto_awesome" filled size={14} />
               </span>
               <div className="flex-1 min-w-0">
@@ -111,7 +111,7 @@ export function TaskDetailPage() {
         {task.matchHint ? (
           <Card tone="warm" className="p-md md:p-lg">
             <header className="flex items-center gap-sm mb-md">
-              <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+              <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                 <Icon name="smart_toy" filled size={18} />
               </span>
               <h2 className="font-title text-title text-deep-char">
@@ -169,7 +169,7 @@ export function TaskDetailPage() {
           </header>
           <ol className="space-y-md text-body text-deep-char">
             <li className="flex items-start gap-md">
-              <span className="h-7 w-7 shrink-0 bg-linghuo-amber text-white flex items-center justify-center font-bold">
+              <span className="h-7 w-7 shrink-0 bg-deep-char text-white flex items-center justify-center font-bold">
                 1
               </span>
               <div>
@@ -211,7 +211,7 @@ export function TaskDetailPage() {
           <p className="text-label text-warm-ash uppercase tracking-widest">
             预算
           </p>
-          <p className="font-headline text-headline text-linghuo-amber mt-1">
+          <p className="font-headline text-headline text-deep-char mt-1">
             {task.budget}
           </p>
           <p className="text-label text-graphite mt-1">{task.budgetType}</p>

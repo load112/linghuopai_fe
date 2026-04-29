@@ -28,7 +28,7 @@ export function MePage() {
   return (
     <div className="space-y-lg">
       <Card className="p-md md:p-lg flex items-center gap-md">
-        <span className="h-14 w-14 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center text-title font-headline">
+        <span className="h-14 w-14 bg-linghuo-amber text-white flex items-center justify-center text-title font-headline">
           {nickname.slice(0, 1)}
         </span>
         <div className="flex-1 min-w-0">
@@ -56,7 +56,7 @@ export function MePage() {
             to="/u/applications"
             className="flex items-center gap-md px-md py-sm hover:bg-bone-cream-dim transition-colors"
           >
-            <Icon name="folder_open" className="text-linghuo-amber" />
+            <Icon name="folder_open" className="text-deep-char" />
             <span className="flex-1 text-deep-char">我的报名 / 任务</span>
             <Icon name="chevron_right" className="text-graphite" />
           </Link>
@@ -64,7 +64,7 @@ export function MePage() {
             to="/u/posted-tasks"
             className="flex items-center gap-md px-md py-sm hover:bg-bone-cream-dim transition-colors"
           >
-            <Icon name="add_task" className="text-linghuo-amber" />
+            <Icon name="add_task" className="text-deep-char" />
             <span className="flex-1 text-deep-char">我发布的任务</span>
             <Icon name="chevron_right" className="text-graphite" />
           </Link>

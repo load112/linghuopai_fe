@@ -64,7 +64,7 @@ export function JobPublishPage() {
 
       <Card tone="warm" className="p-md md:p-lg space-y-md">
         <h3 className="font-title text-title text-deep-char flex items-center gap-sm">
-          <Icon name="auto_awesome" filled className="text-linghuo-amber" />
+          <Icon name="auto_awesome" filled className="text-deep-char" />
           一句话描述你的需求
         </h3>
         {/* 快捷模板 chip */}
@@ -84,7 +84,7 @@ export function JobPublishPage() {
                   `招一位${tpl}的合作者，预算可议，希望能在两周内交付。`,
                 )
               }
-              className="px-md h-8 bg-surface-container-lowest border border-ash-veil text-label text-graphite hover:border-linghuo-amber hover:text-linghuo-amber transition-colors"
+              className="px-md h-8 bg-surface-container-lowest border border-ash-veil text-label text-graphite hover:border-deep-char hover:text-deep-char transition-colors"
             >
               {tpl}
             </button>

@@ -49,7 +49,7 @@ export function EnterpriseLayout() {
               <Icon name="domain" filled />
             </div>
             <div>
-              <h2 className="text-linghuo-amber font-bold tracking-widest text-label">
+              <h2 className="text-deep-char font-bold tracking-widest text-label">
                 企业管理中心
               </h2>
               <p className="text-label text-graphite mt-0.5">
@@ -69,15 +69,22 @@ export function EnterpriseLayout() {
               onClick={() => setNavOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  "flex items-center gap-3 px-md py-sm text-body font-medium transition-all",
+                  "relative flex items-center gap-3 px-md py-sm text-body font-medium transition-all",
                   isActive
-                    ? "bg-bone-cream-dim text-linghuo-amber border-r-2 border-linghuo-amber"
+                    ? "text-deep-char"
                     : "text-graphite hover:bg-bone-cream-dim/60 hover:text-deep-char",
                 )
               }
             >
-              <Icon name={it.icon} size={18} />
-              {it.label}
+              {({ isActive }) => (
+                <>
+                  <Icon name={it.icon} size={18} filled={isActive} />
+                  {it.label}
+                  {isActive ? (
+                    <span className="absolute bottom-1 left-md right-md h-0.5 bg-linghuo-amber" />
+                  ) : null}
+                </>
+              )}
             </NavLink>
           ))}
         </nav>
@@ -136,13 +143,13 @@ export function EnterpriseLayout() {
                 className={({ isActive }) =>
                   cn(
                     "flex flex-col items-center justify-center py-2 gap-0.5 text-label",
-                    isActive ? "text-linghuo-amber" : "text-graphite",
+                    isActive ? "text-deep-char font-medium" : "text-graphite",
                   )
                 }
               >
                 {({ isActive }) => (
                   <>
-                    <Icon name={tab.icon} filled={isActive} size={22} />
+                    <Icon name={tab.icon} filled size={22} />
                     <span className="leading-none">{tab.label}</span>
                   </>
                 )}

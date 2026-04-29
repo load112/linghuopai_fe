@@ -96,7 +96,7 @@ export function ResumePortraitPage() {
           </div>
           <div className="mt-2 h-1.5 bg-ash-veil overflow-hidden">
             <div
-              className="h-full bg-linghuo-amber transition-all duration-500 ease-out-quart"
+              className="h-full bg-deep-char transition-all duration-500 ease-out-quart"
               style={{ width: `${completeness}%` }}
             />
           </div>
@@ -107,7 +107,7 @@ export function ResumePortraitPage() {
       <section className="space-y-md">
         <header className="flex items-center justify-between">
           <h3 className="font-title text-title text-deep-char flex items-center gap-2">
-            <Icon name="auto_awesome" filled className="text-linghuo-amber" />
+            <Icon name="auto_awesome" filled className="text-deep-char" />
             AI 能力画像
           </h3>
           <span className="text-label text-graphite">
@@ -145,10 +145,10 @@ export function ResumePortraitPage() {
                   className={cn(
                     "px-3 py-1.5 text-label font-medium border transition-colors",
                     chip.primary
-                      ? "bg-linghuo-amber text-white border-transparent"
+                      ? "bg-deep-char text-white border-transparent"
                       : chip.slate
                         ? "bg-secondary-container text-on-secondary-container border-transparent"
-                        : "bg-surface-container-lowest text-deep-char border-ash-veil hover:border-linghuo-amber",
+                        : "bg-surface-container-lowest text-deep-char border-ash-veil hover:border-deep-char",
                   )}
                 >
                   {chip.name}
@@ -158,11 +158,11 @@ export function ResumePortraitPage() {
             <div className="pt-md border-t border-ash-veil">
               <div className="flex justify-between text-label mb-1">
                 <span className="text-graphite">匹配度评分</span>
-                <span className="text-linghuo-amber font-bold">92%</span>
+                <span className="text-deep-char font-bold">92%</span>
               </div>
               <div className="h-1.5 bg-ash-veil overflow-hidden">
                 <div
-                  className="h-full bg-linghuo-amber"
+                  className="h-full bg-deep-char"
                   style={{ width: "92%" }}
                 />
               </div>
@@ -203,7 +203,7 @@ export function ResumePortraitPage() {
           <section>
             <header className="flex items-center justify-between mb-md">
               <h3 className="font-title text-title text-deep-char flex items-center gap-2">
-                <Icon name="description" className="text-linghuo-amber" size={18} />
+                <Icon name="description" className="text-deep-char" size={18} />
                 简历管理
               </h3>
               <button
@@ -237,7 +237,7 @@ export function ResumePortraitPage() {
               <button
                 type="button"
                 onClick={() => setHasResume((prev) => prev)}
-                className="bg-surface-container-lowest border border-dashed border-ash-veil p-md flex flex-col items-center justify-center text-graphite hover:border-linghuo-amber hover:text-linghuo-amber transition-all"
+                className="bg-surface-container-lowest border border-dashed border-ash-veil p-md flex flex-col items-center justify-center text-graphite hover:border-deep-char hover:text-deep-char transition-all"
               >
                 <Icon name="add_circle" size={28} />
                 <span className="text-label font-medium mt-1">
@@ -283,7 +283,7 @@ export function ResumePortraitPage() {
         {/* AI 助手草案 */}
         <Card tone="warm" className="p-md md:p-lg space-y-md">
           <header className="flex items-center gap-sm">
-            <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+            <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
               <Icon name="smart_toy" filled size={18} />
             </span>
             <h3 className="text-label font-bold text-deep-char uppercase tracking-widest">
@@ -293,7 +293,7 @@ export function ResumePortraitPage() {
           <div className="bg-surface-container-lowest border border-ash-veil p-md">
             <p className="text-body text-deep-char leading-relaxed italic">
               “基于你近期的{" "}
-              <span className="text-linghuo-amber font-medium">
+              <span className="text-deep-char font-medium">
                 ‘跨境电商 UI 优化’
               </span>{" "}
               项目成果，建议在简历的「专业成就」板块增加：
@@ -322,7 +322,7 @@ export function ResumePortraitPage() {
             </div>
           </div>
           <div className="bg-bone-cream border border-ash-veil px-md py-sm flex items-center gap-sm">
-            <Icon name="lightbulb" size={16} className="text-linghuo-amber" />
+            <Icon name="lightbulb" size={16} className="text-deep-char" />
             <p className="text-label text-on-surface-variant flex-1">
               发现 3 个与你画像高度匹配的新任务，可在任务大厅查看。
             </p>

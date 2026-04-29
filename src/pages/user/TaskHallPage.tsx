@@ -92,7 +92,7 @@ export function TaskHallPage() {
               className={cn(
                 "shrink-0 px-md h-9 text-label font-medium transition-colors",
                 active === f.key
-                  ? "bg-linghuo-amber text-white"
+                  ? "bg-deep-char text-white"
                   : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
               )}
             >
@@ -105,10 +105,10 @@ export function TaskHallPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
         {/* 热门活动 banner（克制：占一格而不是横通栏） */}
         <Card
-          className="relative overflow-hidden p-md md:p-lg cursor-pointer border-linghuo-amber md:col-span-2 lg:col-span-1"
+          className="relative overflow-hidden p-md md:p-lg cursor-pointer border-deep-char md:col-span-2 lg:col-span-1"
         >
           <div className="relative z-10">
-            <p className="text-label uppercase tracking-widest text-linghuo-amber">
+            <p className="text-label uppercase tracking-widest text-deep-char">
               本周热门
             </p>
             <h3 className="font-headline text-title mt-1 text-deep-char">
@@ -169,7 +169,7 @@ export function TaskHallPage() {
             <div className="mt-auto flex items-end justify-between">
               <div>
                 <p className="text-label text-warm-ash">{t.budgetType}</p>
-                <p className="text-linghuo-amber font-headline text-title">
+                <p className="text-deep-char font-headline text-title">
                   {t.budget}
                 </p>
               </div>

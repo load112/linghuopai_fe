@@ -70,7 +70,7 @@ export function ScreeningPage() {
       <Card className="lg:col-span-2 flex flex-col h-[60vh] md:h-[70vh]">
         <header className="px-md md:px-lg py-md border-b border-ash-veil flex items-center justify-between gap-sm">
           <div className="flex items-center gap-sm">
-            <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+            <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
               <Icon name="smart_toy" filled size={18} />
             </span>
             <div>
@@ -98,7 +98,7 @@ export function ScreeningPage() {
               )}
             >
               {t.role === "ai" ? (
-                <span className="h-8 w-8 shrink-0 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+                <span className="h-8 w-8 shrink-0 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                   <Icon name="smart_toy" size={16} filled />
                 </span>
               ) : null}
@@ -107,7 +107,7 @@ export function ScreeningPage() {
                   "max-w-[75%] px-md py-sm text-body leading-relaxed",
                   t.role === "ai"
                     ? "bg-bone-cream-dim border border-ash-veil text-deep-char"
-                    : "bg-linghuo-amber text-white",
+                    : "bg-deep-char text-white",
                 )}
               >
                 {t.text}
@@ -116,7 +116,7 @@ export function ScreeningPage() {
           ))}
           {thinking ? (
             <div className="flex gap-sm">
-              <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
+              <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                 <Icon name="smart_toy" size={16} filled />
               </span>
               <div className="px-md py-sm bg-bone-cream-dim border border-ash-veil text-graphite text-label">
@@ -197,7 +197,7 @@ export function ScreeningPage() {
           <h3 className="font-title text-title text-deep-char">几条小约定</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             <li className="flex items-start gap-sm">
-              <Icon name="bolt" size={16} className="text-linghuo-amber mt-0.5" />
+              <Icon name="bolt" size={16} className="text-deep-char mt-0.5" />
               不限时；想清楚再答
             </li>
             <li className="flex items-start gap-sm">

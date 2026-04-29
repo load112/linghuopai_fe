@@ -76,7 +76,7 @@ export function AdminTasksPage() {
                 className={cn(
                   "h-9 w-9 border border-ash-veil flex items-center justify-center",
                   s.tone === "amber"
-                    ? "bg-bone-cream-dim text-linghuo-amber"
+                    ? "bg-bone-cream-dim text-deep-char"
                     : "bg-bone-cream-dim text-misty-slate",
                 )}
               >
@@ -118,7 +118,7 @@ export function AdminTasksPage() {
                 className={cn(
                   "shrink-0 px-md h-9 text-label font-medium transition-colors",
                   filter === f
-                    ? "bg-linghuo-amber text-white"
+                    ? "bg-deep-char text-white"
                     : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
                 )}
               >
@@ -168,7 +168,7 @@ export function AdminTasksPage() {
                     <td className="py-md text-right space-x-3">
                       <button
                         type="button"
-                        className="text-label text-misty-slate hover:text-linghuo-amber"
+                        className="text-label text-misty-slate hover:text-deep-char"
                       >
                         详情
                       </button>

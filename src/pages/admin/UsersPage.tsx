@@ -62,7 +62,7 @@ export function AdminUsersPage() {
                 className={cn(
                   "shrink-0 px-md h-9 text-label font-medium transition-colors",
                   filter === f
-                    ? "bg-linghuo-amber text-white"
+                    ? "bg-deep-char text-white"
                     : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
                 )}
               >
@@ -115,7 +115,7 @@ export function AdminUsersPage() {
                   <td className="py-md text-right">
                     <button
                       type="button"
-                      className="text-label text-misty-slate hover:text-linghuo-amber"
+                      className="text-label text-misty-slate hover:text-deep-char"
                     >
                       详情
                     </button>

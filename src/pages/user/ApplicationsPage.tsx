@@ -104,7 +104,7 @@ export function ApplicationsPage() {
             className={cn(
               "relative py-sm px-md font-title text-body transition-colors",
               tab === t.key
-                ? "text-linghuo-amber"
+                ? "text-deep-char"
                 : "text-graphite hover:text-deep-char",
             )}
           >
@@ -120,13 +120,13 @@ export function ApplicationsPage() {
       <section className="grid grid-cols-3 gap-sm md:gap-md">
         <Card tone="warm" className="p-md md:p-md md:p-lg">
           <p className="text-label text-graphite">累计参加</p>
-          <p className="font-headline text-headline text-linghuo-amber mt-1">
+          <p className="font-headline text-headline text-deep-char mt-1">
             {stats.total}
           </p>
         </Card>
         <Card tone="warm" className="p-md md:p-md md:p-lg">
           <p className="text-label text-graphite">面试中</p>
-          <p className="font-headline text-headline text-linghuo-amber mt-1">
+          <p className="font-headline text-headline text-deep-char mt-1">
             {stats.interviewing}
           </p>
         </Card>
@@ -168,7 +168,7 @@ export function ApplicationsPage() {
                       {app.lastUpdate}
                     </span>
                   </div>
-                  <span className="text-linghuo-amber font-headline text-title whitespace-nowrap">
+                  <span className="text-deep-char font-headline text-title whitespace-nowrap">
                     {app.taskBudget}
                   </span>
                 </header>
@@ -188,13 +188,13 @@ export function ApplicationsPage() {
                   <div>
                     <div className="flex justify-between text-label mb-1">
                       <span className="text-graphite">面试进度</span>
-                      <span className="font-bold text-linghuo-amber">
+                      <span className="font-bold text-deep-char">
                         {app.progress}%
                       </span>
                     </div>
                     <div className="h-1.5 bg-ash-veil overflow-hidden">
                       <div
-                        className="h-full bg-linghuo-amber"
+                        className="h-full bg-deep-char"
                         style={{ width: `${app.progress}%` }}
                       />
                     </div>

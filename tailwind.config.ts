@@ -72,9 +72,9 @@ export default {
         sm: "0px",
         md: "2px",
         lg: "4px",
-        xl: "8px",
-        "2xl": "12px",
-        "3xl": "16px",
+        xl: "4px",
+        "2xl": "4px",
+        "3xl": "4px",
         full: "9999px",
       },
       spacing: {
@@ -97,10 +97,10 @@ export default {
       },
       fontSize: {
         body: ["clamp(14px, 2vw, 15px)", { lineHeight: "1.6", fontWeight: "400" }],
-        headline: ["clamp(20px, 4vw, 24px)", { lineHeight: "1.25", fontWeight: "600" }],
-        display: ["clamp(1.75rem, 5vw, 3rem)", { lineHeight: "1.1", fontWeight: "600" }],
+        headline: ["18px", { lineHeight: "1.25", fontWeight: "500" }],
+        display: ["clamp(1.5rem, 4vw, 2rem)", { lineHeight: "1.1", fontWeight: "500" }],
         label: ["clamp(11px, 1.5vw, 12px)", { lineHeight: "1", letterSpacing: "0.04em", fontWeight: "500" }],
-        title: ["clamp(16px, 3vw, 18px)", { lineHeight: "1.35", fontWeight: "500" }],
+        title: ["clamp(15px, 2.5vw, 17px)", { lineHeight: "1.35", fontWeight: "500" }],
       },
       transitionTimingFunction: {
         "out-quart": "cubic-bezier(0.165, 0.84, 0.44, 1)",
@@ -109,8 +109,8 @@ export default {
       },
       boxShadow: {
         "ambient-rest": "0 1px 0 0 oklch(92% 0.006 60)",
-        "ambient-hover": "0 4px 16px -4px oklch(45% 0.005 60 / 0.08)",
-        "floating-overlay": "0 16px 40px -12px oklch(22% 0.008 60 / 0.18)",
+        "ambient-hover": "0 2px 8px -2px oklch(45% 0.005 60 / 0.05)",
+        "floating-overlay": "0 8px 24px -8px oklch(22% 0.008 60 / 0.10)",
       },
       maxWidth: {
         body: "75ch",
