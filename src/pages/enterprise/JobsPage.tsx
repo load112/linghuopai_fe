@@ -42,7 +42,7 @@ export function JobsPage() {
       </header>
 
       {!qualified ? (
-        <Card tone="warm" className="p-lg flex items-center gap-md">
+        <Card tone="warm" className="p-md md:p-lg flex items-center gap-md">
           <span className="h-10 w-10 border border-ash-veil bg-bone-cream-dim text-graphite flex items-center justify-center">
             <Icon name="lock" />
           </span>
@@ -65,7 +65,7 @@ export function JobsPage() {
 
       <ul className="space-y-md">
         {jobs.map((j) => (
-          <Card key={j.id} className="p-lg flex flex-col md:flex-row md:items-center gap-md">
+          <Card key={j.id} className="p-md md:p-lg flex flex-col md:flex-row md:items-center gap-md">
             <div className="flex-1 min-w-0">
               <header className="flex flex-wrap items-center gap-sm mb-xs">
                 <h3 className="font-title text-title text-deep-char">{j.title}</h3>

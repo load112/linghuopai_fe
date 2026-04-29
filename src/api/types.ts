@@ -273,7 +273,7 @@ export interface EnterpriseProfile {
 export interface JobItem {
   id: string;
   title: string;
-  status: "进行中" | "已结束";
+  status: "ACTIVE" | "CLOSED";
   location: string;
   salary: string;
   applied: number;

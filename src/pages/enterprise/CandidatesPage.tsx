@@ -95,7 +95,7 @@ export function CandidatesPage() {
                   type="button"
                   onClick={() => setActive(c)}
                   className={cn(
-                    "w-full text-left border bg-surface-container-lowest p-lg transition-all duration-300 ease-out-quart relative",
+                    "w-full text-left border bg-surface-container-lowest p-md md:p-lg transition-all duration-300 ease-out-quart relative",
                     isActive
                       ? "border-linghuo-amber shadow-ambient-hover"
                       : "border-ash-veil hover:shadow-ambient-hover",
@@ -149,7 +149,7 @@ export function CandidatesPage() {
 
         <aside className="lg:col-span-3">
           {active ? (
-            <Card className="p-lg space-y-lg">
+            <Card className="p-md md:p-lg space-y-lg">
               <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-md">
                 <div className="flex items-center gap-md">
                   <span className="h-12 w-12 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center font-headline">
@@ -182,7 +182,7 @@ export function CandidatesPage() {
                 </p>
               </section>
 
-              <section className="bg-bone-cream-dim border border-ash-veil p-lg">
+              <section className="bg-bone-cream-dim border border-ash-veil p-md md:p-lg">
                 <header className="flex items-center justify-between mb-md">
                   <h4 className="font-title text-title text-deep-char flex items-center gap-sm">
                     <Icon
@@ -247,7 +247,7 @@ export function CandidatesPage() {
               </section>
             </Card>
           ) : (
-            <Card className="p-lg text-center text-graphite">
+            <Card className="p-md md:p-lg text-center text-graphite">
               <Icon name="person_search" size={32} className="text-warm-ash" />
               <p className="mt-sm">从左侧选择一位候选人查看详情。</p>
             </Card>

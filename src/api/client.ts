@@ -603,7 +603,7 @@ export const enterpriseApi = {
         pendingCandidates: enterpriseCandidates.filter(
           (c) => c.stage === "REPORT_GENERATED" || c.stage === "IN_PROCESS",
         ).length,
-        openings: enterpriseJobs.filter((j) => j.status === "进行中").length,
+        openings: enterpriseJobs.filter((j) => j.status === "ACTIVE").length,
         aiReportsThisWeek: 12,
         completionRate: 312,
         matchAccuracy: 0.94,
@@ -628,7 +628,7 @@ export const enterpriseApi = {
     const newJob: JobItem = {
       id: `j-${Date.now()}`,
       title: _data.title,
-      status: "进行中",
+      status: "ACTIVE",
       location: _data.location,
       salary: _data.salary,
       applied: 0,

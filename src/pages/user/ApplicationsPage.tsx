@@ -118,13 +118,13 @@ export function ApplicationsPage() {
 
       {/* 3 格 stat */}
       <section className="grid grid-cols-3 gap-sm md:gap-md">
-        <Card tone="warm" className="p-md md:p-lg">
+        <Card tone="warm" className="p-md md:p-md md:p-lg">
           <p className="text-label text-graphite">累计参加</p>
           <p className="font-headline text-headline text-linghuo-amber mt-1">
             {stats.total}
           </p>
         </Card>
-        <Card tone="warm" className="p-md md:p-lg">
+        <Card tone="warm" className="p-md md:p-md md:p-lg">
           <p className="text-label text-graphite">面试中</p>
           <p className="font-headline text-headline text-linghuo-amber mt-1">
             {stats.interviewing}
@@ -132,7 +132,7 @@ export function ApplicationsPage() {
         </Card>
         <Card
           tone="warm"
-          className="p-md md:p-lg opacity-80 cursor-not-allowed select-none"
+          className="p-md md:p-md md:p-lg opacity-80 cursor-not-allowed select-none"
           aria-disabled
         >
           <p className="text-label text-graphite">本月收益</p>
@@ -154,7 +154,7 @@ export function ApplicationsPage() {
               <Card
                 hoverable={app.stage !== "FINISHED"}
                 className={cn(
-                  "p-lg flex flex-col gap-md",
+                  "p-md md:p-lg flex flex-col gap-md",
                   app.stage === "FINISHED" && "opacity-80",
                 )}
               >

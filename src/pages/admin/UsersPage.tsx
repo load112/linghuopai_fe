@@ -37,7 +37,7 @@ export function AdminUsersPage() {
         </p>
       </header>
 
-      <Card className="p-lg space-y-md">
+      <Card className="p-md md:p-lg space-y-md">
         <div className="flex flex-col md:flex-row gap-md">
           <div className="flex-1 relative">
             <Icon

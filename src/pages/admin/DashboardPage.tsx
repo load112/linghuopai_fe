@@ -104,7 +104,7 @@ export function AdminDashboardPage() {
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
         {sections.map((s) => (
-          <Card key={s.key} className="p-lg">
+          <Card key={s.key} className="p-md md:p-md md:p-lg">
             <header className="flex items-start justify-between">
               <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-misty-slate flex items-center justify-center">
                 <Icon name={s.icon} />
@@ -123,7 +123,7 @@ export function AdminDashboardPage() {
       </section>
 
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-        <Card className="lg:col-span-2 p-lg">
+        <Card className="lg:col-span-2 p-md md:p-lg">
           <header className="flex items-center justify-between mb-md pb-sm border-b border-ash-veil">
             <h3 className="font-title text-title text-deep-char">本周转化漏斗</h3>
             <span className="text-label text-warm-ash">
@@ -149,7 +149,7 @@ export function AdminDashboardPage() {
             ))}
           </ul>
         </Card>
-        <Card className="p-lg">
+        <Card className="p-md md:p-md md:p-lg">
           <header className="flex items-center justify-between mb-md pb-sm border-b border-ash-veil">
             <h3 className="font-title text-title text-deep-char">实时事件</h3>
             <span className="text-label text-warm-ash">最近 1 小时</span>

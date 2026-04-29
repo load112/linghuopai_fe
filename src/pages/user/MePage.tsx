@@ -27,7 +27,7 @@ export function MePage() {
 
   return (
     <div className="space-y-lg">
-      <Card className="p-lg flex items-center gap-md">
+      <Card className="p-md md:p-lg flex items-center gap-md">
         <span className="h-14 w-14 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center text-title font-headline">
           {nickname.slice(0, 1)}
         </span>
@@ -49,7 +49,7 @@ export function MePage() {
         </Button>
       </Card>
 
-      <Card className="p-lg space-y-sm">
+      <Card className="p-md md:p-lg space-y-sm">
         <h3 className="font-title text-title text-deep-char">常用</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-sm">
           <Link
@@ -79,7 +79,7 @@ export function MePage() {
         </div>
       </Card>
 
-      <Card tone="warm" className="p-lg">
+      <Card tone="warm" className="p-md md:p-md md:p-lg">
         <h3 className="font-title text-title text-deep-char">敬请期待</h3>
         <p className="text-label text-graphite mt-xs">
           这些能力即将开放，仅展示，不可点。

@@ -96,11 +96,11 @@ export default {
         title: ["Manrope", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "sans-serif"],
       },
       fontSize: {
-        body: ["15px", { lineHeight: "1.6", fontWeight: "400" }],
-        headline: ["24px", { lineHeight: "1.25", fontWeight: "600" }],
-        display: ["clamp(2rem, 5vw, 3rem)", { lineHeight: "1.1", fontWeight: "600" }],
-        label: ["12px", { lineHeight: "1", letterSpacing: "0.04em", fontWeight: "500" }],
-        title: ["18px", { lineHeight: "1.35", fontWeight: "500" }],
+        body: ["clamp(14px, 2vw, 15px)", { lineHeight: "1.6", fontWeight: "400" }],
+        headline: ["clamp(20px, 4vw, 24px)", { lineHeight: "1.25", fontWeight: "600" }],
+        display: ["clamp(1.75rem, 5vw, 3rem)", { lineHeight: "1.1", fontWeight: "600" }],
+        label: ["clamp(11px, 1.5vw, 12px)", { lineHeight: "1", letterSpacing: "0.04em", fontWeight: "500" }],
+        title: ["clamp(16px, 3vw, 18px)", { lineHeight: "1.35", fontWeight: "500" }],
       },
       transitionTimingFunction: {
         "out-quart": "cubic-bezier(0.165, 0.84, 0.44, 1)",

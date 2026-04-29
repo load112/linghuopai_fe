@@ -62,7 +62,7 @@ export function JobPublishPage() {
         </p>
       </header>
 
-      <Card tone="warm" className="p-lg space-y-md">
+      <Card tone="warm" className="p-md md:p-lg space-y-md">
         <h3 className="font-title text-title text-deep-char flex items-center gap-sm">
           <Icon name="auto_awesome" filled className="text-linghuo-amber" />
           一句话描述你的需求
@@ -118,7 +118,7 @@ export function JobPublishPage() {
         ) : null}
       </Card>
 
-      <Card className="p-lg space-y-md">
+      <Card className="p-md md:p-lg space-y-md">
         <h3 className="font-title text-title text-deep-char">补几个关键字段</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <Field

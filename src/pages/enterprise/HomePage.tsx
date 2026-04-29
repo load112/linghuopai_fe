@@ -85,7 +85,7 @@ export function EnterpriseHomePage() {
           {/* 统计卡片 */}
           <section className="grid grid-cols-3 gap-md">
             {stats.map((s) => (
-              <Card key={s.key} className="p-md md:p-lg">
+              <Card key={s.key} className="p-md md:p-md md:p-lg">
                 <div className="flex items-start justify-between">
                   <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                     <Icon name={s.icon} />
@@ -123,7 +123,7 @@ export function EnterpriseHomePage() {
                 <Card
                   key={j.id}
                   hoverable
-                  className="p-lg flex flex-col md:flex-row md:items-center gap-md cursor-pointer"
+                  className="p-md md:p-lg flex flex-col md:flex-row md:items-center gap-md cursor-pointer"
                   onClick={() => navigate("/b/candidates")}
                 >
                   <div className="flex-1 min-w-0">
@@ -167,7 +167,7 @@ export function EnterpriseHomePage() {
         {/* 侧边栏 */}
         <aside className="space-y-lg">
           {/* 资质状态 */}
-          <Card className="p-lg">
+          <Card className="p-md md:p-md md:p-lg">
             <header className="flex items-center gap-sm mb-md">
               <span
                 className={cn(
@@ -215,7 +215,7 @@ export function EnterpriseHomePage() {
           </Card>
 
           {/* 发布 CTA */}
-          <Card className="p-lg border-l-2 border-linghuo-amber">
+          <Card className="p-md md:p-lg border-l-2 border-linghuo-amber">
             <span className="inline-flex items-center gap-1 text-label text-graphite uppercase tracking-widest">
               <Icon name="auto_awesome" size={14} />
               Smart Recruitment
@@ -241,7 +241,7 @@ export function EnterpriseHomePage() {
           </Card>
 
           {/* AI 数据看板 */}
-          <Card className="p-lg">
+          <Card className="p-md md:p-md md:p-lg">
             <header className="flex items-center justify-between mb-md">
               <h3 className="font-title text-title text-deep-char">AI 数据看板</h3>
               <span className="text-label text-warm-ash">实时更新</span>

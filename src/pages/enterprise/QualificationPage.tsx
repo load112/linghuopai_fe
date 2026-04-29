@@ -45,7 +45,7 @@ export function QualificationPage() {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
       <div className="lg:col-span-2 space-y-lg">
         {/* Step Tracker */}
-        <Card className="p-md md:p-lg">
+        <Card className="p-md md:p-md md:p-lg">
           <ol className="flex items-center gap-sm md:gap-md">
             {steps.map((s, i) => {
               const isDone = submitted ? true : i < stepIndex;
@@ -88,7 +88,7 @@ export function QualificationPage() {
           </ol>
         </Card>
 
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <header className="flex items-center gap-sm">
             <span
               className={`h-10 w-10 flex items-center justify-center border ${
@@ -112,7 +112,7 @@ export function QualificationPage() {
           </header>
         </Card>
 
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <h3 className="font-title text-title text-deep-char">企业基础信息</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
             <Field
@@ -146,7 +146,7 @@ export function QualificationPage() {
           </div>
         </Card>
 
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <h3 className="font-title text-title text-deep-char">证照上传</h3>
           <ul className="space-y-md">
             {documents.map((doc) => (
@@ -213,7 +213,7 @@ export function QualificationPage() {
       </div>
 
       <aside className="space-y-lg">
-        <Card tone="warm" className="p-lg">
+        <Card tone="warm" className="p-md md:p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">认证须知</h3>
           <ul className="mt-md space-y-sm text-body text-graphite leading-relaxed">
             <li className="flex items-start gap-sm">
@@ -231,7 +231,7 @@ export function QualificationPage() {
           </ul>
         </Card>
 
-        <Card className="p-lg">
+        <Card className="p-md md:p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">认证后开启</h3>
           <ul className="mt-md space-y-sm text-body text-deep-char">
             <li className="flex items-center gap-sm">

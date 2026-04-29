@@ -24,7 +24,7 @@ export function AdminEnterprisesPage() {
         </p>
       </header>
 
-      <Card className="p-lg">
+      <Card className="p-md md:p-lg">
         <div className="hidden md:block">
           <table className="w-full text-body">
             <thead>

@@ -55,7 +55,7 @@ export function ResumePortraitPage() {
   return (
     <div className="space-y-lg">
       {/* 个人头部 */}
-      <Card tone="warm" className="p-lg flex flex-col md:flex-row md:items-center gap-md">
+      <Card tone="warm" className="p-md md:p-lg flex flex-col md:flex-row md:items-center gap-md">
         <div className="relative h-20 w-20 shrink-0 bg-bone-cream-dim border border-ash-veil p-0.5">
           <div className="h-full w-full bg-bone-cream-dim text-deep-char flex items-center justify-center font-headline text-headline">
             {nickname.slice(0, 1)}
@@ -115,7 +115,7 @@ export function ResumePortraitPage() {
           </span>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <Card className="md:col-span-2 p-lg flex flex-col items-center justify-center relative overflow-hidden">
+          <Card className="md:col-span-2 p-md md:p-lg flex flex-col items-center justify-center relative overflow-hidden">
             <div
               className="absolute inset-0 opacity-[0.04] pointer-events-none"
               style={{
@@ -134,7 +134,7 @@ export function ResumePortraitPage() {
             </div>
           </Card>
 
-          <Card tone="warm" className="p-lg space-y-md">
+          <Card tone="warm" className="p-md md:p-lg space-y-md">
             <h4 className="text-label font-bold text-deep-char uppercase tracking-widest">
               核心技能标签
             </h4>
@@ -173,7 +173,7 @@ export function ResumePortraitPage() {
 
       {/* 资料 + 简历 + 项目 */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-        <Card className="p-lg lg:col-span-2 space-y-lg">
+        <Card className="p-md md:p-lg lg:col-span-2 space-y-lg">
           {/* 基础资料 */}
           <section>
             <header className="flex items-center justify-between mb-md">
@@ -281,7 +281,7 @@ export function ResumePortraitPage() {
         </Card>
 
         {/* AI 助手草案 */}
-        <Card tone="warm" className="p-lg space-y-md">
+        <Card tone="warm" className="p-md md:p-lg space-y-md">
           <header className="flex items-center gap-sm">
             <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
               <Icon name="smart_toy" filled size={18} />

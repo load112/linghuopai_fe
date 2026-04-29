@@ -70,7 +70,7 @@ export function AdminTasksPage() {
             tone: "amber",
           },
         ].map((s) => (
-          <Card key={s.label} className="p-md md:p-lg">
+          <Card key={s.label} className="p-md md:p-md md:p-lg">
             <header className="flex items-start justify-between">
               <span
                 className={cn(
@@ -93,7 +93,7 @@ export function AdminTasksPage() {
         ))}
       </section>
 
-      <Card className="p-lg space-y-md">
+      <Card className="p-md md:p-lg space-y-md">
         <div className="flex flex-col md:flex-row gap-md">
           <div className="flex-1 relative">
             <Icon

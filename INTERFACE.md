@@ -58,18 +58,32 @@ POST /auth/login
 { "phone": "13800138000", "code": "123456" }
 ```
 
-**响应**：
+**响应**（根据 `realm` 返回对应结构）：
+
+`realm === "user"`：
 ```json
 {
   "token": "jwt-string",
   "user": {
     "id": "u-xxx",
-    "realm": "user",           // 或 "enterprise"
+    "realm": "user",
     "phone": "13800138000",
-    "nickname": "陈领活",       // user 字段
-    "resumeCompleteness": 92,  // user 字段
-    "enterpriseName": "极光科技", // enterprise 字段
-    "qualified": true          // enterprise 字段
+    "nickname": "陈领活",
+    "resumeCompleteness": 92
+  }
+}
+```
+
+`realm === "enterprise"`：
+```json
+{
+  "token": "jwt-string",
+  "user": {
+    "id": "e-xxx",
+    "realm": "enterprise",
+    "phone": "13800138000",
+    "enterpriseName": "极光科技",
+    "qualified": true
   }
 }
 ```
@@ -295,7 +309,7 @@ GET /applications?tab=ALL
   "stats": {
     "total": 5,
     "interviewing": 1,
-    "monthlyEarnings": null      // 第一版未上线
+    "monthlyEarnings": undefined // 第一版暂不返回
   }
 }
 ```
@@ -326,6 +340,8 @@ POST /applications/:id/reject-invite
 ```
 GET /screening/:taskId
 ```
+
+> 注：一个用户对一个任务只有一个面试会话，因此用 `taskId` 可直接定位。报名接口（3.3）返回的 `screeningSessionId` 供前端路由使用，数据查询仍以 `taskId` 为准。
 
 **响应**：
 ```json
@@ -359,7 +375,8 @@ POST /screening/:sessionId/reply
 
 **响应**：返回更新后的 Session（含 AI 新回复）
 
-> 后端在收到 4-5 轮用户回复后自然收尾，返回 `status: "COMPLETED"`
+> 后端在收到 4-5 轮用户回复后自然收尾，返回 `status: "COMPLETED"`。
+> 请求体仅含 `text`，不需要 `round` 等前端状态参数，后端自行维护对话轮次。
 
 ---
 
@@ -548,7 +565,7 @@ GET /enterprise/jobs
     {
       "id": "j-001",
       "title": "高级 UI/UX 设计师",
-      "status": "进行中",
+      "status": "ACTIVE",
       "location": "杭州 · 滨江",
       "salary": "15k-25k",
       "applied": 42,
@@ -702,16 +719,19 @@ GET /admin/dashboard
 {
   "metrics": {
     "registration": {
+      "title": "用户注册",
       "weekTotal": 1284,
       "weekDelta": 12.4,
       "activeRate": 0.62
     },
     "taskFlow": {
+      "title": "任务流转",
       "publishedThisWeek": 318,
       "inProgress": 542,
       "delta": 8.1
     },
     "aiScreening": {
+      "title": "AI 初筛",
       "sessions": 1024,
       "reports": 762,
       "convertRate": 0.43
@@ -855,6 +875,7 @@ POST /admin/announcement
 | 字段 | 可选值 |
 |------|--------|
 | `TaskStatus` | `PUBLISHED`, `IN_PROGRESS`, `CLOSED` |
+| `JobStatus` | `ACTIVE`, `CLOSED` |
 | `ApplicationStage` | `INTERVIEW`, `AWAIT_CONFIRM`, `SUBMITTED`, `INVITED`, `FINISHED` |
 | `CandidateStage` | `REPORT_GENERATED`, `IN_PROCESS`, `FINISHED` |
 | `MessageKind` | `system`, `invite`, `interview`, `report`, `thread`, `announcement` |

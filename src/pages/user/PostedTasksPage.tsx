@@ -101,7 +101,7 @@ export function PostedTasksPage() {
       </header>
 
       {creating ? (
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <header className="flex items-center justify-between">
             <h3 className="font-title text-title text-deep-char">
               发布任务（AI 帮你润色）
@@ -158,7 +158,7 @@ export function PostedTasksPage() {
 
       <ul className="space-y-md">
         {tasks.map((t) => (
-          <Card key={t.id} className="p-lg flex flex-col md:flex-row md:items-center gap-md">
+          <Card key={t.id} className="p-md md:p-lg flex flex-col md:flex-row md:items-center gap-md">
             <div className="flex-1 min-w-0">
               <header className="flex items-center gap-sm mb-1">
                 <Badge tone="graphite">个人发布</Badge>

@@ -67,8 +67,8 @@ export function ScreeningPage() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-      <Card className="lg:col-span-2 flex flex-col h-[70vh]">
-        <header className="px-lg py-md border-b border-ash-veil flex items-center justify-between gap-sm">
+      <Card className="lg:col-span-2 flex flex-col h-[60vh] md:h-[70vh]">
+        <header className="px-md md:px-lg py-md border-b border-ash-veil flex items-center justify-between gap-sm">
           <div className="flex items-center gap-sm">
             <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
               <Icon name="smart_toy" filled size={18} />
@@ -88,7 +88,7 @@ export function ScreeningPage() {
           </Badge>
         </header>
 
-        <div className="flex-1 overflow-y-auto px-lg py-md space-y-md no-scrollbar">
+        <div className="flex-1 overflow-y-auto px-md md:px-lg py-md space-y-md no-scrollbar">
           {turns.map((t) => (
             <div
               key={t.id}
@@ -127,7 +127,7 @@ export function ScreeningPage() {
           <div ref={endRef} />
         </div>
 
-        <div className="px-lg py-md border-t border-ash-veil space-y-sm">
+        <div className="px-md md:px-lg py-md border-t border-ash-veil space-y-sm">
           {done ? (
             <div className="flex flex-col md:flex-row md:items-center gap-md">
               <p className="text-body text-graphite max-w-body">
@@ -154,7 +154,7 @@ export function ScreeningPage() {
               className="flex flex-col md:flex-row gap-sm"
             >
               <textarea
-                rows={1}
+                rows={2}
                 value={draft}
                 onChange={(e) => setDraft(e.target.value)}
                 onKeyDown={(e) => {
@@ -179,7 +179,7 @@ export function ScreeningPage() {
       </Card>
 
       <aside className="space-y-lg">
-        <Card tone="warm" className="p-lg">
+        <Card tone="warm" className="p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">这次面试关于</h3>
           <p className="text-body text-deep-char mt-sm font-medium">
             {session.taskTitle}
@@ -193,7 +193,7 @@ export function ScreeningPage() {
             ))}
           </div>
         </Card>
-        <Card className="p-lg">
+        <Card className="p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">几条小约定</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             <li className="flex items-start gap-sm">

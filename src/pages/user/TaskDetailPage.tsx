@@ -45,8 +45,8 @@ export function TaskDetailPage() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-      <article className="lg:col-span-2 space-y-lg">
-        <Card className="p-lg space-y-md">
+      <article className="order-2 lg:order-1 lg:col-span-2 space-y-lg">
+        <Card className="p-md md:p-lg space-y-md">
           <div className="flex flex-wrap items-center gap-sm">
             <Badge tone={task.source === "enterprise" ? "slate" : "graphite"}>
               {task.source === "enterprise" ? "企业发布" : "个人发布"}
@@ -109,7 +109,7 @@ export function TaskDetailPage() {
         </Card>
 
         {task.matchHint ? (
-          <Card tone="warm" className="p-lg">
+          <Card tone="warm" className="p-md md:p-lg">
             <header className="flex items-center gap-sm mb-md">
               <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
                 <Icon name="smart_toy" filled size={18} />
@@ -144,7 +144,7 @@ export function TaskDetailPage() {
           </Card>
         ) : null}
 
-        <Card className="p-lg">
+        <Card className="p-md md:p-lg">
           <h2 className="font-title text-title text-deep-char">任务详情</h2>
           <div className="mt-md prose prose-sm max-w-body text-graphite leading-relaxed">
             <p>
@@ -160,7 +160,7 @@ export function TaskDetailPage() {
           </div>
         </Card>
 
-        <Card tone="warm" className="p-lg">
+        <Card tone="warm" className="p-md md:p-lg">
           <header className="flex items-center gap-sm mb-md">
             <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-misty-slate flex items-center justify-center">
               <Icon name="route" size={18} />
@@ -206,8 +206,8 @@ export function TaskDetailPage() {
         </Card>
       </article>
 
-      <aside className="space-y-lg">
-        <Card className="p-lg">
+      <aside className="order-1 lg:order-2 space-y-lg">
+        <Card className="p-md md:p-lg">
           <p className="text-label text-warm-ash uppercase tracking-widest">
             预算
           </p>
@@ -240,7 +240,7 @@ export function TaskDetailPage() {
           </p>
         </Card>
 
-        <Card tone="warm" className="p-lg">
+        <Card tone="warm" className="p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">关于发布方</h3>
           <p className="text-graphite text-label mt-xs leading-relaxed">
             {task.source === "enterprise"

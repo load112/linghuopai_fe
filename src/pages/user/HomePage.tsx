@@ -54,7 +54,7 @@ export function UserHomePage() {
   }
 
   return (
-    <div className="space-y-2xl">
+    <div className="space-y-xl md:space-y-2xl">
       {/* 欢迎区：非对称 3:1 */}
       <section className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
         <div className="lg:col-span-3 space-y-xl">
@@ -97,7 +97,7 @@ export function UserHomePage() {
           </div>
         </div>
 
-        <div className="border border-ash-veil bg-surface-container-lowest p-lg flex flex-col justify-between">
+        <div className="border border-ash-veil bg-surface-container-lowest p-md md:p-lg flex flex-col justify-between">
           <div>
             <h3 className="font-title text-title text-deep-char">任务大厅</h3>
             <p className="text-body text-graphite mt-xs">
@@ -116,7 +116,7 @@ export function UserHomePage() {
 
       {/* AI 推荐 */}
       <section>
-        <header className="flex items-end justify-between mb-lg pb-sm border-b border-ash-veil">
+        <header className="flex items-end justify-between mb-md md:mb-lg pb-sm border-b border-ash-veil">
           <div>
             <h2 className="font-headline text-headline text-deep-char">
               AI 智能匹配
@@ -139,7 +139,7 @@ export function UserHomePage() {
               tone="default"
               hoverable
               onClick={() => navigate(`/u/tasks/${t.id}`)}
-              className="p-lg cursor-pointer"
+              className="p-md md:p-lg cursor-pointer"
             >
               <div className="flex justify-between items-start mb-sm">
                 <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden">
@@ -195,7 +195,7 @@ export function UserHomePage() {
 
       {/* 占位能力 */}
       <section>
-        <header className="mb-lg pb-sm border-b border-ash-veil">
+        <header className="mb-md md:mb-lg pb-sm border-b border-ash-veil">
           <h2 className="font-title text-title text-deep-char">
             敬请期待
           </h2>
@@ -231,7 +231,7 @@ export function UserHomePage() {
         <Card
           tone="default"
           hoverable
-          className="p-lg flex items-center gap-md cursor-pointer"
+          className="p-md md:p-lg flex items-center gap-md cursor-pointer"
           onClick={() => navigate("/u/posted-tasks")}
         >
           <span className="h-12 w-12 bg-bone-cream-dim text-deep-char flex items-center justify-center border border-ash-veil">
@@ -247,7 +247,7 @@ export function UserHomePage() {
         </Card>
         <Card
           tone="default"
-          className="p-lg flex items-center gap-md cursor-pointer hover:shadow-ambient-hover transition-shadow"
+          className="p-md md:p-lg flex items-center gap-md cursor-pointer hover:shadow-ambient-hover transition-shadow"
           onClick={() => navigate("/u/me/agreements")}
         >
           <span className="h-12 w-12 bg-bone-cream-dim text-deep-char flex items-center justify-center border border-ash-veil">

@@ -88,21 +88,13 @@ export const taskHall: TaskCard[] = [
   },
 ];
 
-export interface JobItem {
-  id: string;
-  title: string;
-  status: "进行中" | "已结束";
-  location: string;
-  salary: string;
-  applied: number;
-  passed: number;
-}
+import type { JobItem } from "@/api/types";
 
 export const enterpriseJobs: JobItem[] = [
   {
     id: "j-001",
     title: "高级 UI/UX 设计师",
-    status: "进行中",
+    status: "ACTIVE",
     location: "杭州 · 滨江",
     salary: "15k-25k",
     applied: 42,
@@ -111,7 +103,7 @@ export const enterpriseJobs: JobItem[] = [
   {
     id: "j-002",
     title: "前端开发工程师 (React)",
-    status: "进行中",
+    status: "ACTIVE",
     location: "远程",
     salary: "18k-30k",
     applied: 28,

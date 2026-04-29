@@ -209,7 +209,7 @@ export function AssistantPage() {
       </Card>
 
       <aside className="space-y-lg">
-        <Card tone="warm" className="p-lg">
+        <Card tone="warm" className="p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">能做的事</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             {[
@@ -224,7 +224,7 @@ export function AssistantPage() {
             ))}
           </ul>
         </Card>
-        <Card className="p-lg">
+        <Card className="p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">不做的事</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             <li className="flex items-start gap-sm">

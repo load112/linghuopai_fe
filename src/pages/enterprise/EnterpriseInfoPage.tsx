@@ -37,7 +37,7 @@ export function EnterpriseInfoPage() {
   return (
     <div className="space-y-lg">
       {/* 企业概览卡 */}
-      <Card className="p-lg flex flex-col md:flex-row gap-md md:gap-lg md:items-center md:justify-between">
+      <Card className="p-md md:p-lg flex flex-col md:flex-row gap-md md:gap-lg md:items-center md:justify-between">
         <div className="flex flex-col md:flex-row md:items-center gap-md">
           <button
             type="button"
@@ -91,7 +91,7 @@ export function EnterpriseInfoPage() {
               <Icon name="info" size={18} className="text-misty-slate" />
               <h3 className="font-title text-title text-deep-char">基础资料</h3>
             </header>
-            <div className="p-lg space-y-md">
+            <div className="p-md md:p-lg space-y-md">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
                 <Field
                   label="企业全称"
@@ -138,7 +138,7 @@ export function EnterpriseInfoPage() {
                 资质文件管理
               </h3>
             </header>
-            <div className="p-lg grid grid-cols-1 sm:grid-cols-2 gap-md">
+            <div className="p-md md:p-lg grid grid-cols-1 sm:grid-cols-2 gap-md">
               {documents.map((doc) => (
                 <div
                   key={doc.name}
@@ -169,7 +169,7 @@ export function EnterpriseInfoPage() {
 
         <aside className="space-y-lg">
           {/* 资质状态 */}
-          <Card className="p-lg">
+          <Card className="p-md md:p-md md:p-lg">
             <header className="flex items-center gap-sm mb-md">
               <span
                 className={cn(
@@ -205,7 +205,7 @@ export function EnterpriseInfoPage() {
           </Card>
 
           {/* 企业智能洞察（暖橙弱底 + 完整描边，无侧条） */}
-          <Card className="p-lg border-linghuo-amber">
+          <Card className="p-md md:p-lg border-linghuo-amber">
             <header className="flex items-center gap-sm mb-sm">
               <Icon name="auto_awesome" className="text-linghuo-amber" size={20} />
               <h4 className="font-title text-label font-bold text-linghuo-amber uppercase tracking-tight">
@@ -225,7 +225,7 @@ export function EnterpriseInfoPage() {
             </button>
           </Card>
 
-          <Card tone="warm" className="p-lg">
+          <Card tone="warm" className="p-md md:p-md md:p-lg">
             <h3 className="font-title text-title text-deep-char">合规提示</h3>
             <p className="mt-md text-body text-graphite leading-relaxed">
               企业信息将出现在岗位详情、候选人沟通页与资质审核记录中。请确保填写真实，

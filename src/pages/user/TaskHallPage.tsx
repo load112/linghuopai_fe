@@ -80,7 +80,7 @@ export function TaskHallPage() {
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="搜索任务标题、发布者、标签"
-            className="w-full pl-xl pr-md h-11 bg-bone-cream-dim border border-ash-veil placeholder:text-warm-ash text-body focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none transition-all"
+            className="w-full pl-xl pr-md h-10 md:h-11 bg-bone-cream-dim border border-ash-veil placeholder:text-warm-ash text-body focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none transition-all"
           />
         </div>
         <div className="flex gap-2 overflow-x-auto no-scrollbar">
@@ -105,7 +105,7 @@ export function TaskHallPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
         {/* 热门活动 banner（克制：占一格而不是横通栏） */}
         <Card
-          className="relative overflow-hidden p-lg cursor-pointer border-linghuo-amber md:col-span-2 lg:col-span-1"
+          className="relative overflow-hidden p-md md:p-lg cursor-pointer border-linghuo-amber md:col-span-2 lg:col-span-1"
         >
           <div className="relative z-10">
             <p className="text-label uppercase tracking-widest text-linghuo-amber">
@@ -137,7 +137,7 @@ export function TaskHallPage() {
             key={t.id}
             tone="warm"
             hoverable
-            className="p-lg cursor-pointer flex flex-col gap-md"
+            className="p-md md:p-lg cursor-pointer flex flex-col gap-md"
             onClick={() => navigate(`/u/tasks/${t.id}`)}
           >
             <div className="flex items-start justify-between gap-sm">

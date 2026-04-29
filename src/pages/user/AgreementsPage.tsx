@@ -24,7 +24,7 @@ export function AgreementsPage() {
         </p>
       </header>
 
-      <Card tone="warm" className="p-lg space-y-md">
+      <Card tone="warm" className="p-md md:p-lg space-y-md">
         <span className="inline-flex items-center gap-1 text-label text-warm-ash uppercase tracking-widest">
           <Icon name="info" size={14} />
           占位说明

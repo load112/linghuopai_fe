@@ -34,7 +34,7 @@ export function AdminConfigPage() {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-lg">
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <h3 className="font-title text-title text-deep-char">平台公告</h3>
           <Field
             label="标题"
@@ -60,7 +60,7 @@ export function AdminConfigPage() {
           </div>
         </Card>
 
-        <Card className="p-lg space-y-md">
+        <Card className="p-md md:p-lg space-y-md">
           <h3 className="font-title text-title text-deep-char">运营策略（只读）</h3>
           <ul className="divide-y divide-ash-veil">
             {policyItems.map((p) => (
@@ -78,7 +78,7 @@ export function AdminConfigPage() {
           </p>
         </Card>
 
-        <Card className="p-lg lg:col-span-2 space-y-md">
+        <Card className="p-md md:p-lg lg:col-span-2 space-y-md">
           <header className="flex items-center justify-between">
             <h3 className="font-title text-title text-deep-char">技能标签字典</h3>
             <Button variant="secondary" size="sm">
