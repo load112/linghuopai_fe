@@ -66,7 +66,7 @@ export function TaskDetailPage() {
             <h1 className="font-headline text-headline text-deep-char">
               {task.title}
             </h1>
-            <p className="text-graphite text-body mt-xs flex items-center gap-1">
+            <p className="text-graphite text-body mt-xs leading-[1.7] flex items-center gap-1">
               {task.publisher}
               {task.source === "enterprise" ? (
                 <Icon
@@ -211,7 +211,7 @@ export function TaskDetailPage() {
           <p className="text-label text-warm-ash uppercase tracking-widest">
             预算
           </p>
-          <p className="font-headline text-headline text-deep-char mt-1">
+          <p className="font-headline text-title text-deep-char mt-1">
             {task.budget}
           </p>
           <p className="text-label text-graphite mt-1">{task.budgetType}</p>

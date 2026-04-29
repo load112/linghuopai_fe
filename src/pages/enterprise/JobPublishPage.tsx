@@ -57,7 +57,7 @@ export function JobPublishPage() {
         <h2 className="mt-sm font-headline text-headline text-deep-char">
           发布新岗位
         </h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           先用一两句描述意图，AI 会帮你润色出结构化稿，你再补几个关键字段就能直接发布。
         </p>
       </header>
@@ -111,7 +111,7 @@ export function JobPublishPage() {
             <p className="text-label text-warm-ash uppercase tracking-widest mb-xs">
               AI 润色稿
             </p>
-            <p className="whitespace-pre-line text-body text-deep-char leading-relaxed">
+            <p className="whitespace-pre-line text-body text-deep-char leading-[1.7]">
               {ai}
             </p>
           </div>

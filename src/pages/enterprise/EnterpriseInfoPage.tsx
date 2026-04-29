@@ -62,7 +62,7 @@ export function EnterpriseInfoPage() {
                 ariaLabel="已认证企业"
               />
             </div>
-            <p className="text-body text-misty-slate mt-xs">
+            <p className="text-body text-misty-slate mt-xs leading-[1.7]">
               人力资源服务 / 数字化人才解决方案
             </p>
             <div className="flex flex-wrap gap-xs justify-center md:justify-start mt-sm">
@@ -118,7 +118,7 @@ export function EnterpriseInfoPage() {
                 <label className="block font-label text-label text-graphite mb-xs">
                   企业简介
                 </label>
-                <div className="bg-bone-cream-dim border border-ash-veil px-md py-sm text-body text-graphite leading-relaxed max-w-body">
+                <div className="bg-bone-cream-dim border border-ash-veil px-md py-sm text-body text-graphite leading-[1.7] max-w-body">
                   暖光科技是领先的数字化人才服务商，致力于为高增长企业提供灵活的弹性用工方案。
                   我们通过自主研发的 AI 匹配算法与灵活用工平台，连接优质青年专业人才与创新型企业。
                 </div>
@@ -212,7 +212,7 @@ export function EnterpriseInfoPage() {
                 企业智能洞察
               </h4>
             </header>
-            <p className="text-body text-graphite leading-relaxed">
+            <p className="text-body text-graphite leading-[1.7]">
               你的企业简介中关于「数字化」的关键词匹配度极高，建议在招聘岗位中增加
               「技术敏感度」标签，以吸引更精准的复合型人才。
             </p>
@@ -227,7 +227,7 @@ export function EnterpriseInfoPage() {
 
           <Card tone="warm" className="p-md md:p-md md:p-lg">
             <h3 className="font-title text-title text-deep-char">合规提示</h3>
-            <p className="mt-md text-body text-graphite leading-relaxed">
+            <p className="mt-md text-body text-graphite leading-[1.7]">
               企业信息将出现在岗位详情、候选人沟通页与资质审核记录中。请确保填写真实，
               不真实将影响认证结果。
             </p>

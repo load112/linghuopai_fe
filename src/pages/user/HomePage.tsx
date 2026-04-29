@@ -59,10 +59,10 @@ export function UserHomePage() {
       <section className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
         <div className="lg:col-span-3 space-y-xl">
           <div>
-            <h1 className="font-display text-display text-deep-char">
+            <h1 className="font-headline text-headline text-deep-char">
               你好，{nickname}
             </h1>
-            <p className="text-body text-graphite mt-md max-w-body leading-relaxed">
+            <p className="text-body text-graphite mt-md max-w-body leading-[1.7]">
               你的画像已更新，AI 为你找到了 {recommended.length} 个匹配岗位。继续完善资料，获得更精准的推荐。
             </p>
           </div>
@@ -75,7 +75,7 @@ export function UserHomePage() {
                 <span className="font-headline text-headline text-deep-char">
                   UI 设计
                 </span>
-                <span className="text-label text-graphite">
+                <span className="text-label text-warm-ash">
                   Lvl. High
                 </span>
               </div>
@@ -83,13 +83,13 @@ export function UserHomePage() {
             <div className="border border-ash-veil p-md">
               <div className="flex items-center justify-between">
                 <span className="text-label text-graphite">资料完整度</span>
-                <span className="text-label font-medium text-deep-char tabular-nums">
+                <span className="text-title font-medium text-deep-char tabular-nums">
                   {completeness}%
                 </span>
               </div>
               <div className="mt-2 h-1.5 bg-ash-veil overflow-hidden">
                 <div
-                  className="h-full bg-deep-char transition-all duration-500 ease-out-quart"
+                  className="h-full bg-graphite transition-all duration-500 ease-out-quart"
                   style={{ width: `${completeness}%` }}
                 />
               </div>
@@ -144,20 +144,11 @@ export function UserHomePage() {
               <div className="flex justify-between items-start mb-sm">
                 <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
-                    <rect x="3" y="3" width="26" height="26" fill="oklch(96% 0.008 60)" />
-                    <path
-                      d="M9 22 L16 9 L23 22 Z"
-                      fill="#EA5614"
-                      fillOpacity="0.15"
-                      stroke="#EA5614"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
-                    <circle cx="16" cy="14" r="2.5" fill="#4A616F" />
+                    <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
                   </svg>
                 </div>
                 <div className="text-right">
-                  <span className="block text-deep-char font-bold text-title tabular-nums">
+                  <span className="block text-title text-graphite tabular-nums">
                     {t.budget}
                   </span>
                   <span className="text-label text-graphite">

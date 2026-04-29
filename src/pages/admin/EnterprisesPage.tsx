@@ -19,7 +19,7 @@ export function AdminEnterprisesPage() {
         <h2 className="font-headline text-headline text-deep-char">
           企业用户管理
         </h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           查看企业基础信息、资质状态与发布岗位数量。可标记 / 暂停企业。
         </p>
       </header>

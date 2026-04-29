@@ -104,7 +104,7 @@ export function ScreeningPage() {
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-md py-sm text-body leading-relaxed",
+                  "max-w-[75%] px-md py-sm text-body leading-[1.8] tracking-[-0.2px]",
                   t.role === "ai"
                     ? "bg-bone-cream-dim border border-ash-veil text-deep-char"
                     : "bg-deep-char text-white",

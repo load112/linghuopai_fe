@@ -84,7 +84,7 @@ export function AssistantPage() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-      <Card className="lg:col-span-2 flex flex-col h-[70vh]">
+      <Card className="lg:col-span-2 flex flex-col min-h-[60vh] md:min-h-[70vh]">
         <header className="px-lg py-md border-b border-ash-veil flex items-center gap-sm">
           <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
             <Icon name="smart_toy" filled size={18} />
@@ -113,13 +113,13 @@ export function AssistantPage() {
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-md py-sm break-keep",
+                  "max-w-[75%] px-lg py-md break-keep",
                   m.from === "ai"
                     ? "bg-[#F8F7F4] border border-ash-veil text-deep-char"
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-body leading-relaxed">{m.text}</p>
+                <p className="text-body leading-[1.8] tracking-[-0.2px]">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-1 text-label opacity-70">{m.hint}</p>
                 ) : null}
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-label text-graphite hover:bg-surface-container-low truncate"
+                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-body text-graphite hover:bg-surface-container-low truncate"
               >
                 {p}
               </button>

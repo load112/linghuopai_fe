@@ -32,7 +32,7 @@ export function MePage() {
           {nickname.slice(0, 1)}
         </span>
         <div className="flex-1 min-w-0">
-          <h2 className="font-headline text-title text-deep-char">
+          <h2 className="font-headline text-headline text-deep-char">
             {nickname}
           </h2>
           <p className="text-label text-graphite mt-xs">
@@ -81,7 +81,7 @@ export function MePage() {
 
       <Card tone="warm" className="p-md md:p-md md:p-lg">
         <h3 className="font-title text-title text-deep-char">敬请期待</h3>
-        <p className="text-label text-graphite mt-xs">
+        <p className="text-body text-graphite mt-xs">
           这些能力即将开放，仅展示，不可点。
         </p>
         <ul className="mt-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-sm">

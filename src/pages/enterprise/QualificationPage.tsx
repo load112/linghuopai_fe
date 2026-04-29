@@ -215,7 +215,7 @@ export function QualificationPage() {
       <aside className="space-y-lg">
         <Card tone="warm" className="p-md md:p-md md:p-lg">
           <h3 className="font-title text-title text-deep-char">认证须知</h3>
-          <ul className="mt-md space-y-sm text-body text-graphite leading-relaxed">
+          <ul className="mt-md space-y-sm text-body text-graphite leading-[1.7]">
             <li className="flex items-start gap-sm">
               <Icon name="schedule" size={16} className="text-misty-slate mt-0.5" />
               人工审核 1-2 个工作日内完成

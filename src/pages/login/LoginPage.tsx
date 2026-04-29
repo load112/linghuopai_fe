@@ -78,7 +78,7 @@ export function LoginPage() {
           <h1 className="font-display text-display text-deep-char tracking-tight">
             领活派
           </h1>
-          <p className="font-body text-body text-graphite mt-sm max-w-body">
+          <p className="font-body text-body text-graphite mt-sm max-w-body leading-[1.7]">
             让每一次灵活就业都温厚有力
           </p>
           <div className="mt-xl space-y-md">
@@ -88,7 +88,7 @@ export function LoginPage() {
               </span>
               <div>
                 <p className="text-title font-title text-deep-char">AI 智能匹配</p>
-                <p className="text-body text-graphite mt-xs">基于能力画像，为你找到最合适的灵活用工岗位</p>
+                <p className="text-body text-graphite mt-xs leading-[1.7]">基于能力画像，为你找到最合适的灵活用工岗位</p>
               </div>
             </div>
             <div className="flex items-start gap-sm">
@@ -97,7 +97,7 @@ export function LoginPage() {
               </span>
               <div>
                 <p className="text-title font-title text-deep-char">双向保障</p>
-                <p className="text-body text-graphite mt-xs">平台监管 + AI 初筛，让企业和劳动者都安心</p>
+                <p className="text-body text-graphite mt-xs leading-[1.7]">平台监管 + AI 初筛，让企业和劳动者都安心</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export function LoginPage() {
                 className={cn(
                   "pb-sm mr-lg text-title font-title transition-colors",
                   mode === "user"
-                    ? "text-deep-char border-b-2 border-deep-char"
+                    ? "text-deep-char border-b-2 border-linghuo-amber"
                     : "text-graphite hover:text-deep-char",
                 )}
               >
@@ -126,7 +126,7 @@ export function LoginPage() {
                 className={cn(
                   "pb-sm mr-lg text-title font-title transition-colors",
                   mode === "enterprise"
-                    ? "text-deep-char border-b-2 border-deep-char"
+                    ? "text-deep-char border-b-2 border-linghuo-amber"
                     : "text-graphite hover:text-deep-char",
                 )}
               >

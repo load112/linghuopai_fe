@@ -87,7 +87,7 @@ export function ApplicationsPage() {
         <h2 className="font-headline text-headline text-deep-char">
           我的报名
         </h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           推进路径在这里同步：你看到的不是报告原文，而是「现在你在哪一步」。
         </p>
       </header>
@@ -102,7 +102,7 @@ export function ApplicationsPage() {
             type="button"
             onClick={() => setTab(t.key)}
             className={cn(
-              "relative py-sm px-md font-title text-body transition-colors",
+              "relative py-sm px-md font-title text-title transition-colors",
               tab === t.key
                 ? "text-deep-char"
                 : "text-graphite hover:text-deep-char",
@@ -110,7 +110,7 @@ export function ApplicationsPage() {
           >
             {t.label}
             {tab === t.key ? (
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[3px] w-1/2 bg-linghuo-amber" />
+              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-1/2 bg-linghuo-amber" />
             ) : null}
           </button>
         ))}
@@ -188,7 +188,7 @@ export function ApplicationsPage() {
                   <div>
                     <div className="flex justify-between text-label mb-1">
                       <span className="text-graphite">面试进度</span>
-                      <span className="font-bold text-deep-char">
+                      <span className="text-title text-deep-char">
                         {app.progress}%
                       </span>
                     </div>

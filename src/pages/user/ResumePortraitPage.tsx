@@ -68,7 +68,7 @@ export function ResumePortraitPage() {
             </h2>
             <Badge tone="amber">Lv.4 资深协作客</Badge>
           </div>
-          <p className="text-graphite text-body mt-xs">
+          <p className="text-graphite text-body mt-xs leading-[1.7]">
             全栈设计师 / 数字化游民 / 摄影爱好者
           </p>
           <div className="flex flex-wrap gap-md mt-sm text-label text-misty-slate">
@@ -126,7 +126,7 @@ export function ResumePortraitPage() {
             <RadarPolygon axes={radarAxes} size={240} />
             <div className="mt-lg text-center">
               <p className="text-body font-medium text-deep-char">
-                “高适应性的跨学科专家”
+                "高适应性的跨学科专家"
               </p>
               <p className="text-label text-graphite mt-1">
                 在复杂多变的任务环境中表现优异
@@ -135,7 +135,7 @@ export function ResumePortraitPage() {
           </Card>
 
           <Card tone="warm" className="p-md md:p-lg space-y-md">
-            <h4 className="text-label font-bold text-deep-char uppercase tracking-widest">
+            <h4 className="text-label font-medium text-deep-char uppercase tracking-widest">
               核心技能标签
             </h4>
             <div className="flex flex-wrap gap-sm">
@@ -158,7 +158,7 @@ export function ResumePortraitPage() {
             <div className="pt-md border-t border-ash-veil">
               <div className="flex justify-between text-label mb-1">
                 <span className="text-graphite">匹配度评分</span>
-                <span className="text-deep-char font-bold">92%</span>
+                <span className="text-deep-char font-medium">92%</span>
               </div>
               <div className="h-1.5 bg-ash-veil overflow-hidden">
                 <div
@@ -271,7 +271,7 @@ export function ResumePortraitPage() {
                 >
                   <p className="font-medium text-deep-char">{p.name}</p>
                   <p className="text-label text-warm-ash mt-0.5">{p.period}</p>
-                  <p className="text-body text-graphite mt-xs leading-relaxed">
+                  <p className="text-body text-graphite mt-xs leading-[1.7]">
                     {p.desc}
                   </p>
                 </li>
@@ -286,21 +286,21 @@ export function ResumePortraitPage() {
             <span className="h-9 w-9 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
               <Icon name="smart_toy" filled size={18} />
             </span>
-            <h3 className="text-label font-bold text-deep-char uppercase tracking-widest">
+            <h3 className="text-label font-medium text-deep-char uppercase tracking-widest">
               AI 资料优化建议
             </h3>
           </header>
           <div className="bg-surface-container-lowest border border-ash-veil p-md">
-            <p className="text-body text-deep-char leading-relaxed italic">
-              “基于你近期的{" "}
+            <p className="text-body text-deep-char leading-[1.7] italic">
+              "基于你近期的{" "}
               <span className="text-deep-char font-medium">
-                ‘跨境电商 UI 优化’
+                '跨境电商 UI 优化'
               </span>{" "}
               项目成果，建议在简历的「专业成就」板块增加：
               <span className="font-medium">
                 「通过 A/B 测试将结账转化率提升了 18%」
               </span>
-              。”
+              。"
             </p>
             <div className="mt-md flex justify-end gap-sm">
               <Button

@@ -89,7 +89,7 @@ export function PostedTasksPage() {
           <h2 className="font-headline text-headline text-deep-char">
             我发布的任务
           </h2>
-          <p className="text-graphite text-body mt-xs max-w-body">
+          <p className="text-graphite text-body mt-xs max-w-body leading-[1.7]">
             个人发任务复用 AI 帮你整理描述。第一版不做候选人列表与 AI 报告，所有推进通过
             站内沟通进行。
           </p>
@@ -148,7 +148,7 @@ export function PostedTasksPage() {
               <p className="text-label text-warm-ash uppercase tracking-widest mb-xs">
                 AI 润色稿（你可以直接发布，也可以再修改）
               </p>
-              <p className="text-body text-deep-char whitespace-pre-line leading-relaxed">
+              <p className="text-body text-deep-char whitespace-pre-line leading-[1.7]">
                 {polished}
               </p>
             </div>

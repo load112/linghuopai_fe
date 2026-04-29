@@ -97,7 +97,7 @@ export function AdminDashboardPage() {
     <div className="space-y-lg">
       <header>
         <h2 className="font-headline text-headline text-deep-char">运营看板</h2>
-        <p className="text-body text-graphite mt-xs">
+        <p className="text-body text-graphite mt-xs leading-[1.7]">
           只展示三类核心指标：注册与活跃、任务发布与进行中、AI 初筛与报告转化。
         </p>
       </header>
@@ -135,7 +135,7 @@ export function AdminDashboardPage() {
               <li key={row.label}>
                 <div className="flex items-center justify-between text-label mb-xs">
                   <span className="text-graphite">{row.label}</span>
-                  <span className="font-bold text-deep-char">
+                  <span className="font-medium text-deep-char">
                     {row.value.toLocaleString()}
                   </span>
                 </div>

@@ -70,10 +70,10 @@ export function EnterpriseHomePage() {
     <div className="space-y-2xl">
       {/* 页面标题区 */}
       <header>
-        <h1 className="font-display text-display text-deep-char">
+        <h1 className="font-headline text-headline text-deep-char">
           {enterprise?.enterpriseName ?? "企业工作台"}
         </h1>
-        <p className="text-body text-graphite mt-sm max-w-body">
+        <p className="text-body text-graphite mt-sm max-w-body leading-[1.7]">
           {enterprise?.qualified
             ? "资质已认证，全部业务能力已解锁。"
             : "未完成资质认证前，发布岗位、查看候选人、AI 报告与站内沟通将被锁定。"}
@@ -223,7 +223,7 @@ export function EnterpriseHomePage() {
             <h3 className="mt-sm font-title text-title text-deep-char">
               需要发布新职位？
             </h3>
-            <p className="text-body text-graphite mt-1 leading-relaxed">
+            <p className="text-body text-graphite mt-1 leading-[1.7]">
               让 AI 在 30 秒内帮你润色 JD，吸引最合适的候选人。
             </p>
             <Button

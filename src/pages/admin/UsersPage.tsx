@@ -32,7 +32,7 @@ export function AdminUsersPage() {
         <h2 className="font-headline text-headline text-deep-char">
           个人用户管理
         </h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           纯治理：仅查看 / 下架 / 标记，不代用户执行任何业务动作。
         </p>
       </header>
@@ -60,13 +60,16 @@ export function AdminUsersPage() {
                 type="button"
                 onClick={() => setFilter(f)}
                 className={cn(
-                  "shrink-0 px-md h-9 text-label font-medium transition-colors",
+                  "shrink-0 px-md py-sm text-title font-medium transition-colors relative",
                   filter === f
-                    ? "bg-deep-char text-white"
-                    : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
+                    ? "text-deep-char"
+                    : "text-graphite hover:text-deep-char",
                 )}
               >
                 {f}
+                {filter === f ? (
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-1/2 bg-linghuo-amber" />
+                ) : null}
               </button>
             ))}
           </div>

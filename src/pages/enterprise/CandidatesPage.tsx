@@ -58,7 +58,7 @@ export function CandidatesPage() {
           <h2 className="font-headline text-headline text-deep-char">
             候选人管理
           </h2>
-          <p className="text-graphite text-body mt-xs max-w-body">
+          <p className="text-graphite text-body mt-xs max-w-body leading-[1.7]">
             列表只展示完成 AI 初筛、已生成报告的候选人；面试进行中的候选人不在此呈现。
           </p>
         </div>
@@ -69,13 +69,16 @@ export function CandidatesPage() {
               type="button"
               onClick={() => setStage(s.key)}
               className={cn(
-                "shrink-0 px-md h-9 text-label font-medium transition-colors",
+                "shrink-0 px-md py-sm text-title font-medium transition-colors relative",
                 stage === s.key
-                  ? "bg-deep-char text-white"
-                  : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
+                  ? "text-deep-char"
+                  : "text-graphite hover:text-deep-char",
               )}
             >
               {s.label}
+              {stage === s.key ? (
+                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-1/2 bg-linghuo-amber" />
+              ) : null}
             </button>
           ))}
         </div>
@@ -197,7 +200,7 @@ export function CandidatesPage() {
                     匹配度 {active.matchScore}%
                   </span>
                 </header>
-                <p className="text-body text-deep-char leading-relaxed">
+                <p className="text-body text-deep-char leading-[1.7]">
                   {active.highlight}
                 </p>
                 <ul className="mt-md grid grid-cols-1 md:grid-cols-3 gap-sm text-body">

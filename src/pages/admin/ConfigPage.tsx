@@ -28,7 +28,7 @@ export function AdminConfigPage() {
     <div className="space-y-lg">
       <header>
         <h2 className="font-headline text-headline text-deep-char">基础配置</h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           运营最小配置项。复杂策略由后端定义，前端仅做展示与轻量编辑。
         </p>
       </header>

@@ -29,7 +29,7 @@ export function JobsPage() {
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-md">
         <div>
           <h2 className="font-headline text-headline text-deep-char">岗位管理</h2>
-          <p className="text-graphite text-body mt-xs">
+          <p className="text-graphite text-body mt-xs leading-[1.7]">
             第一版仅支持单条发布与管理；批量能力暂未上线。
           </p>
         </div>

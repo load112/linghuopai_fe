@@ -97,9 +97,9 @@ export default {
       },
       fontSize: {
         body: ["clamp(14px, 2vw, 15px)", { lineHeight: "1.6", fontWeight: "400" }],
-        headline: ["18px", { lineHeight: "1.25", fontWeight: "500" }],
+        headline: ["18px", { lineHeight: "1.4", fontWeight: "500" }],
         display: ["clamp(1.5rem, 4vw, 2rem)", { lineHeight: "1.1", fontWeight: "500" }],
-        label: ["clamp(11px, 1.5vw, 12px)", { lineHeight: "1", letterSpacing: "0.04em", fontWeight: "500" }],
+        label: ["clamp(11px, 1.5vw, 12px)", { lineHeight: "1.35", letterSpacing: "0.04em", fontWeight: "500" }],
         title: ["clamp(15px, 2.5vw, 17px)", { lineHeight: "1.35", fontWeight: "500" }],
       },
       transitionTimingFunction: {

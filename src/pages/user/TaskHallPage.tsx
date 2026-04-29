@@ -63,7 +63,7 @@ export function TaskHallPage() {
         <h2 className="font-headline text-headline text-deep-char">
           任务大厅
         </h2>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           全量已发布任务，按你的画像智能排序，个人与企业一起呈现。
         </p>
       </header>
@@ -90,13 +90,16 @@ export function TaskHallPage() {
               type="button"
               onClick={() => setActive(f.key)}
               className={cn(
-                "shrink-0 px-md h-9 text-label font-medium transition-colors",
+                "shrink-0 px-md py-sm text-title font-medium transition-colors relative",
                 active === f.key
-                  ? "bg-deep-char text-white"
-                  : "bg-bone-cream-dim text-graphite hover:bg-surface-container-low border border-ash-veil",
+                  ? "text-deep-char"
+                  : "text-graphite hover:text-deep-char",
               )}
             >
               {f.label}
+              {active === f.key ? (
+                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-1/2 bg-linghuo-amber" />
+              ) : null}
             </button>
           ))}
         </div>
@@ -114,7 +117,7 @@ export function TaskHallPage() {
             <h3 className="font-headline text-title mt-1 text-deep-char">
               城市青年作品季
             </h3>
-            <p className="text-graphite text-body mt-xs leading-relaxed max-w-[28ch]">
+            <p className="text-graphite text-body mt-xs leading-[1.7] max-w-[28ch]">
               50 个设计向任务集中开放，AI 优先按你的画像推荐入选项。
             </p>
             <button
@@ -169,7 +172,7 @@ export function TaskHallPage() {
             <div className="mt-auto flex items-end justify-between">
               <div>
                 <p className="text-label text-warm-ash">{t.budgetType}</p>
-                <p className="text-deep-char font-headline text-title">
+                <p className="text-graphite font-headline text-title">
                   {t.budget}
                 </p>
               </div>

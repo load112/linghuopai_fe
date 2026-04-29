@@ -19,7 +19,7 @@ export function AgreementsPage() {
         <h1 className="mt-md font-headline text-headline text-deep-char">
           我的协议
         </h1>
-        <p className="text-graphite text-body mt-xs">
+        <p className="text-graphite text-body mt-xs leading-[1.7]">
           这里将集中展示与企业方签署过的服务协议。本版本暂未上线，先做个占位说明。
         </p>
       </header>
@@ -32,7 +32,7 @@ export function AgreementsPage() {
         <h2 className="font-title text-title text-deep-char">
           为什么先不实装？
         </h2>
-        <p className="text-graphite leading-relaxed">
+        <p className="text-graphite leading-[1.7]">
           签约能力依赖主系统接口与电子签章服务（如契约锁）的对接。第一版我们让你看到入口，
           知道协议未来会落在哪里，但不在没有完成主系统对接前提供模拟数据。
         </p>
