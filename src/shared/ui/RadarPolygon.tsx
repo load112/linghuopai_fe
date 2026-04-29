@@ -141,7 +141,7 @@ export function RadarPolygon({
         return (
           <span
             key={axis.label}
-            className="absolute text-[11px] font-medium text-deep-char select-none whitespace-nowrap"
+            className="absolute text-label font-medium text-deep-char select-none whitespace-nowrap"
             style={{
               left: `${x}px`,
               top: `${y}px`,

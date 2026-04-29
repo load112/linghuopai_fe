@@ -40,8 +40,8 @@ export function AdminLayout() {
               <Icon name="admin_panel_settings" />
             </span>
             <div>
-              <h2 className="text-[13px] font-bold tracking-widest">运营后台</h2>
-              <p className="text-[11px] text-warm-ash mt-0.5">
+              <h2 className="text-body font-bold tracking-widest">运营后台</h2>
+              <p className="text-label text-warm-ash mt-0.5">
                 {admin?.displayName ?? "管理员"}
               </p>
             </div>
@@ -55,7 +55,7 @@ export function AdminLayout() {
               onClick={() => setNavOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  "flex items-center gap-3 px-md py-sm text-[13px] font-medium transition-colors",
+                  "flex items-center gap-3 px-md py-sm text-body font-medium transition-colors",
                   isActive
                     ? "bg-linghuo-amber/15 text-linghuo-amber"
                     : "text-bone-cream/70 hover:text-bone-cream hover:bg-white/5",
@@ -70,7 +70,7 @@ export function AdminLayout() {
         <button
           type="button"
           onClick={logout}
-          className="m-3 px-md py-sm text-[12px] text-bone-cream/70 hover:text-bone-cream hover:bg-white/5 flex items-center gap-2 transition-colors"
+          className="m-3 px-md py-sm text-label text-bone-cream/70 hover:text-bone-cream hover:bg-white/5 flex items-center gap-2 transition-colors"
         >
           <Icon name="logout" size={16} />
           退出后台
@@ -95,11 +95,11 @@ export function AdminLayout() {
             >
               <Icon name="menu" />
             </button>
-            <h1 className="font-headline text-[16px] text-deep-char tracking-tight">
+            <h1 className="font-headline text-title text-deep-char tracking-tight">
               领活派 · 运营后台
             </h1>
           </div>
-          <p className="text-[11px] text-graphite hidden sm:block">
+          <p className="text-label text-graphite hidden sm:block">
             纯治理：只看不发，不代企业 / 不代个人执行业务动作
           </p>
         </header>

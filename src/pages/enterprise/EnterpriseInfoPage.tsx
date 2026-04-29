@@ -144,7 +144,7 @@ export function EnterpriseInfoPage() {
                   key={doc.name}
                   className="bg-bone-cream-dim border border-ash-veil px-md py-sm flex items-center gap-md hover:shadow-ambient-hover transition-all group"
                 >
-                  <span className="h-16 w-12 rounded bg-surface-container-lowest border border-ash-veil flex items-center justify-center text-misty-slate shrink-0">
+                  <span className="h-16 w-12 bg-surface-container-lowest border border-ash-veil flex items-center justify-center text-misty-slate shrink-0">
                     <Icon name={doc.icon} />
                   </span>
                   <div className="flex-1 min-w-0">

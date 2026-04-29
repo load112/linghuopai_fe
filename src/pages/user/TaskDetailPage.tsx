@@ -9,20 +9,39 @@ import { Icon } from "@/shared/ui/Icon";
 import { Button } from "@/shared/ui/Button";
 import { Card } from "@/shared/ui/Card";
 import { Badge } from "@/shared/ui/Badge";
-import { taskHall } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { TaskDetailResponse } from "@/api/types";
+import { useState, useEffect } from "react";
 
 export function TaskDetailPage() {
   const { taskId } = useParams<{ taskId: string }>();
   const navigate = useNavigate();
-  const task = useMemo(
-    () => taskHall.find((t) => t.id === taskId) ?? taskHall[0],
-    [taskId],
-  );
+  const [task, setTask] = useState<TaskDetailResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!taskId) return;
+    api.tasks.detail(taskId).then((res) => {
+      setTask(res.data);
+      setLoading(false);
+    });
+  }, [taskId]);
 
   const apply = () => {
-    // 报名即创建任务级 AI 面试会话；spec：不点二级动作
-    navigate(`/u/screening/${task.id}`);
+    if (!task) return;
+    api.tasks.apply(task.id).then(() => {
+      navigate(`/u/screening/${task.id}`);
+    });
   };
+
+  if (loading || !task) {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg animate-pulse">
+        <div className="lg:col-span-2 h-64 bg-bone-cream-dim border border-ash-veil" />
+        <div className="h-48 bg-bone-cream-dim border border-ash-veil" />
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">

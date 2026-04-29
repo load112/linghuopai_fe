@@ -29,10 +29,10 @@ export function UserLayout() {
               <Icon name="local_fire_department" filled size={20} />
             </span>
             <div>
-              <h1 className="font-headline text-[18px] tracking-tight text-deep-char leading-tight">
+              <h1 className="font-headline text-title tracking-tight text-deep-char leading-tight">
                 领活派
               </h1>
-              <p className="text-[10px] text-warm-ash leading-none mt-0.5">
+              <p className="text-label text-warm-ash leading-none mt-0.5">
                 让每一次灵活就业都温厚有力
               </p>
             </div>
@@ -45,7 +45,7 @@ export function UserLayout() {
                 to={tab.to}
                 className={({ isActive }) =>
                   cn(
-                    "px-md py-sm text-[13px] font-medium transition-all flex items-center gap-2",
+                    "px-md py-sm text-body font-medium transition-all flex items-center gap-2",
                     isActive
                       ? "bg-bone-cream-dim text-linghuo-amber"
                       : "text-graphite hover:text-deep-char hover:bg-bone-cream-dim/60",
@@ -63,12 +63,12 @@ export function UserLayout() {
             <button
               type="button"
               onClick={logout}
-              className="hidden sm:inline-flex items-center gap-1 px-3 py-2 text-[12px] text-graphite hover:text-deep-char hover:bg-bone-cream-dim transition-colors"
+              className="hidden sm:inline-flex items-center gap-1 px-3 py-2 text-label text-graphite hover:text-deep-char hover:bg-bone-cream-dim transition-colors"
             >
               <Icon name="logout" size={16} />
               退出
             </button>
-            <span className="hidden md:inline-flex items-center justify-center h-9 w-9 bg-bone-cream-dim text-[12px] font-medium text-deep-char border border-ash-veil">
+            <span className="hidden md:inline-flex items-center justify-center h-9 w-9 bg-bone-cream-dim text-label font-medium text-deep-char border border-ash-veil">
               {session?.realm === "user" ? session.nickname.slice(0, 1) : "U"}
             </span>
           </div>
@@ -89,7 +89,7 @@ export function UserLayout() {
               to={tab.to}
               className={({ isActive }) =>
                 cn(
-                  "flex flex-col items-center justify-center py-2 gap-0.5 text-[11px]",
+                  "flex flex-col items-center justify-center py-2 gap-0.5 text-label",
                   isActive ? "text-linghuo-amber" : "text-graphite",
                 )
               }

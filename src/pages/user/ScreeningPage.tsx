@@ -10,32 +10,30 @@ import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
 import { Button } from "@/shared/ui/Button";
 import { Badge } from "@/shared/ui/Badge";
-import { taskHall } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { ScreeningSession, ScreeningTurn } from "@/api/types";
 import { cn } from "@/shared/utils/cn";
-
-interface Turn {
-  id: string;
-  role: "ai" | "user";
-  text: string;
-}
-
-const initialFlow: Turn[] = [
-  {
-    id: "ai-1",
-    role: "ai",
-    text: "你好，欢迎来到这次的智能初筛。咱们先从你最熟的事情说起：能不能简单聊聊你最近一次做插画的过程？",
-  },
-];
 
 export function ScreeningPage() {
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
-  const task = taskHall.find((t) => t.id === sessionId) ?? taskHall[0];
-  const [turns, setTurns] = useState<Turn[]>(initialFlow);
+  const [session, setSession] = useState<ScreeningSession | null>(null);
+  const [turns, setTurns] = useState<ScreeningTurn[]>([]);
   const [draft, setDraft] = useState("");
   const [thinking, setThinking] = useState(false);
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(true);
   const endRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sessionId) return;
+    api.screening.getSession(sessionId).then((res) => {
+      setSession(res.data);
+      setTurns(res.data.turns);
+      setDone(res.data.status === "COMPLETED");
+      setLoading(false);
+    });
+  }, [sessionId]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -43,42 +41,29 @@ export function ScreeningPage() {
 
   const submit = () => {
     const value = draft.trim();
-    if (!value || thinking || done) return;
+    if (!value || thinking || done || !session) return;
     setTurns((prev) => [
       ...prev,
       { id: `u-${Date.now()}`, role: "user", text: value },
     ]);
     setDraft("");
     setThinking(true);
-    setTimeout(() => {
-      const round = turns.filter((t) => t.role === "user").length + 1;
-      // spec：不向用户展示题数上限；这里仅模拟在 4-5 轮后自然收尾
-      if (round >= 4) {
-        setTurns((prev) => [
-          ...prev,
-          {
-            id: `ai-${Date.now()}`,
-            role: "ai",
-            text: "我了解了。你的回答和这个任务非常契合，谢谢你的耐心。我已经把要点整理好，企业方稍后会看到结构化结果。",
-          },
-        ]);
-        setThinking(false);
-        setDone(true);
-      } else {
-        const followUps = [
-          "听起来你对节奏有偏好。如果给你 3 天交付 8 张插画，你会怎么排时间？",
-          "你提到风格保持一致，能聊聊你判断「风格一致」的标准吗？",
-          "如果中期评审被指出风格偏了，你打算怎么处理？",
-        ];
-        const next = followUps[round - 1] ?? "再多讲一点你最得意的细节，可以是色彩、节奏或文案。";
-        setTurns((prev) => [
-          ...prev,
-          { id: `ai-${Date.now()}`, role: "ai", text: next },
-        ]);
-        setThinking(false);
-      }
-    }, 800);
+    const round = turns.filter((t) => t.role === "user").length + 1;
+    api.screening.reply(session.sessionId, { text: value }, round).then((res) => {
+      setTurns((prev) => [...prev, ...res.data.turns.slice(-1)]);
+      setDone(res.data.status === "COMPLETED");
+      setThinking(false);
+    });
   };
+
+  if (loading || !session) {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg animate-pulse">
+        <div className="lg:col-span-2 h-[70vh] bg-bone-cream-dim border border-ash-veil" />
+        <div className="h-48 bg-bone-cream-dim border border-ash-veil" />
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
@@ -90,7 +75,7 @@ export function ScreeningPage() {
             </span>
             <div>
               <h2 className="font-title text-title text-deep-char">
-                智能初筛 · {task.title}
+                智能初筛 · {session.taskTitle}
               </h2>
               <p className="text-label text-graphite">
                 可随时离开页面，回来时会接着上一题继续
@@ -119,7 +104,7 @@ export function ScreeningPage() {
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-md py-sm  text-body leading-relaxed",
+                  "max-w-[75%] px-md py-sm text-body leading-relaxed",
                   t.role === "ai"
                     ? "bg-bone-cream-dim border border-ash-veil text-deep-char"
                     : "bg-linghuo-amber text-white",
@@ -134,7 +119,7 @@ export function ScreeningPage() {
               <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
                 <Icon name="smart_toy" size={16} filled />
               </span>
-              <div className="px-md py-sm  bg-bone-cream-dim border border-ash-veil text-graphite text-label">
+              <div className="px-md py-sm bg-bone-cream-dim border border-ash-veil text-graphite text-label">
                 正在记录…
               </div>
             </div>
@@ -179,7 +164,7 @@ export function ScreeningPage() {
                   }
                 }}
                 placeholder="你的回答…回车发送，Shift + 回车换行"
-                className="flex-1 px-md py-sm border border-ash-veil bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
+                className="flex-1 px-md py-sm bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
               />
               <Button type="submit" disabled={!draft.trim() || thinking}>
                 <Icon name="arrow_upward" size={18} />
@@ -197,11 +182,11 @@ export function ScreeningPage() {
         <Card tone="warm" className="p-lg">
           <h3 className="font-title text-title text-deep-char">这次面试关于</h3>
           <p className="text-body text-deep-char mt-sm font-medium">
-            {task.title}
+            {session.taskTitle}
           </p>
-          <p className="text-label text-graphite mt-1">{task.publisher}</p>
+          <p className="text-label text-graphite mt-1">{session.publisher}</p>
           <div className="mt-md flex flex-wrap gap-xs">
-            {task.tags.map((tag) => (
+            {session.tags.map((tag) => (
               <Badge key={tag} tone="graphite">
                 {tag}
               </Badge>

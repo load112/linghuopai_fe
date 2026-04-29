@@ -82,7 +82,7 @@ export function MessageCenter() {
       >
         <Icon name="mail" className="text-graphite" />
         {unreadCount > 0 ? (
-          <span className="absolute top-1 right-1 min-w-[18px] h-[18px] px-1 bg-linghuo-amber text-white text-[10px] font-bold leading-[18px] text-center">
+          <span className="absolute top-1 right-1 min-w-[18px] h-[18px] px-1 bg-linghuo-amber text-white text-label font-bold leading-[18px] text-center">
             {unreadCount > 99 ? "99+" : unreadCount}
           </span>
         ) : null}
@@ -100,7 +100,7 @@ export function MessageCenter() {
           <header className="flex items-center justify-between px-md py-sm border-b border-ash-veil bg-bone-cream-dim">
             <div>
               <h3 className="font-title text-title text-deep-char">消息中心</h3>
-              <p className="text-[11px] text-graphite mt-0.5">
+              <p className="text-label text-graphite mt-0.5">
                 {detail
                   ? "面板内预览，无需跳转"
                   : `${unreadCount} 条未读 · 共 ${messages.length} 条`}
@@ -110,7 +110,7 @@ export function MessageCenter() {
               <button
                 type="button"
                 onClick={() => setOpenId(null)}
-                className="text-[12px] text-misty-slate hover:text-linghuo-amber flex items-center gap-1"
+                className="text-label text-misty-slate hover:text-linghuo-amber flex items-center gap-1"
               >
                 <Icon name="arrow_back_ios_new" size={14} />
                 返回列表
@@ -121,7 +121,7 @@ export function MessageCenter() {
                 onClick={() =>
                   setMessages((prev) => prev.map((m) => ({ ...m, read: true })))
                 }
-                className="text-[12px] text-misty-slate hover:text-linghuo-amber"
+                className="text-label text-misty-slate hover:text-linghuo-amber"
               >
                 全部已读
               </button>
@@ -142,7 +142,7 @@ export function MessageCenter() {
                     size={14}
                     filled
                   />
-                  <span className="text-[11px] font-medium">
+                  <span className="text-label font-medium">
                     {messageKindMeta[detail.kind].label}
                   </span>
                 </div>
@@ -150,12 +150,12 @@ export function MessageCenter() {
                   <h4 className="font-title text-title text-deep-char">
                     {detail.title}
                   </h4>
-                  <p className="text-[11px] text-warm-ash mt-1">{detail.time}</p>
+                  <p className="text-label text-warm-ash mt-1">{detail.time}</p>
                 </div>
                 <p className="text-body text-on-surface-variant leading-relaxed">
                   {detail.preview}
                 </p>
-                <p className="text-[11px] text-warm-ash">
+                <p className="text-label text-warm-ash">
                   说明：第一版消息中心仅在面板内预览，不跳转业务页。请前往对应主入口处理。
                 </p>
               </article>
@@ -163,7 +163,7 @@ export function MessageCenter() {
               <div className="px-md py-xl text-center text-graphite">
                 <Icon name="forum" className="text-warm-ash" size={28} />
                 <p className="mt-sm text-body">这里安静得像清晨。</p>
-                <p className="text-[12px] text-warm-ash">
+                <p className="text-label text-warm-ash">
                   企业邀约、面试推进、AI 报告生成会先出现在这里。
                 </p>
               </div>
@@ -190,17 +190,17 @@ export function MessageCenter() {
                       </span>
                       <span className="flex-1 min-w-0">
                         <span className="flex items-center gap-xs">
-                          <span className="text-[13px] font-medium text-deep-char truncate">
+                          <span className="text-body font-medium text-deep-char truncate">
                             {m.title}
                           </span>
                           {!m.read ? (
                             <span className="h-1.5 w-1.5 bg-linghuo-amber shrink-0" />
                           ) : null}
                         </span>
-                        <span className="block text-[12px] text-graphite line-clamp-2 mt-0.5">
+                        <span className="block text-label text-graphite line-clamp-2 mt-0.5">
                           {m.preview}
                         </span>
-                        <span className="block text-[11px] text-warm-ash mt-1">
+                        <span className="block text-label text-warm-ash mt-1">
                           {m.time}
                         </span>
                       </span>

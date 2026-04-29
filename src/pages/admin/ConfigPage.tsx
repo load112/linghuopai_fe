@@ -48,7 +48,7 @@ export function AdminConfigPage() {
             <textarea
               rows={5}
               placeholder="发布到个人端消息中心。文案应当克制、清晰、不卖弄。"
-              className="w-full px-md py-sm border border-ash-veil bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
+              className="w-full px-md py-sm bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
             />
           </div>
           <div className="flex justify-end gap-sm">

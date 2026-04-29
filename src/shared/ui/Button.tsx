@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeMap: Record<Size, string> = {
-  sm: "h-9 px-md text-[13px]",
+  sm: "h-9 px-md text-label",
   md: "h-11 px-lg text-body",
   lg: "h-12 px-lg text-title",
 };

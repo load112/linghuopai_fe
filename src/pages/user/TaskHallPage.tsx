@@ -2,12 +2,13 @@
  * 任务大厅：同时展示个人发任务与企业发岗位，仅在卡片上做轻量来源标识。
  * 默认按 AI 推荐优先级排序。
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
 import { Badge } from "@/shared/ui/Badge";
-import { taskHall } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { TaskCard } from "@/api/types";
 import { cn } from "@/shared/utils/cn";
 
 const filters = [
@@ -23,10 +24,19 @@ type FilterKey = (typeof filters)[number]["key"];
 export function TaskHallPage() {
   const [active, setActive] = useState<FilterKey>("all");
   const [keyword, setKeyword] = useState("");
+  const [list, setList] = useState<TaskCard[]>([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const list = useMemo(() => {
-    return taskHall.filter((t) => {
+  useEffect(() => {
+    api.tasks.list().then((res) => {
+      setList(res.data.list);
+      setLoading(false);
+    });
+  }, []);
+
+  const filtered = useMemo(() => {
+    return list.filter((t) => {
       const matchesKeyword =
         keyword.trim() === "" ||
         t.title.toLowerCase().includes(keyword.toLowerCase()) ||
@@ -45,7 +55,7 @@ export function TaskHallPage() {
                   : true;
       return matchesKeyword && matchesFilter;
     });
-  }, [active, keyword]);
+  }, [active, keyword, list]);
 
   return (
     <div className="space-y-lg">
@@ -70,7 +80,7 @@ export function TaskHallPage() {
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="搜索任务标题、发布者、标签"
-            className="w-full pl-xl pr-md h-11 border border-ash-veil bg-bone-cream-dim border border-ash-veil placeholder:text-warm-ash text-body focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none transition-all"
+            className="w-full pl-xl pr-md h-11 bg-bone-cream-dim border border-ash-veil placeholder:text-warm-ash text-body focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none transition-all"
           />
         </div>
         <div className="flex gap-2 overflow-x-auto no-scrollbar">
@@ -95,21 +105,21 @@ export function TaskHallPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
         {/* 热门活动 banner（克制：占一格而不是横通栏） */}
         <Card
-          className="relative overflow-hidden p-lg text-white bg-linghuo-amber cursor-pointer md:col-span-2 lg:col-span-1"
+          className="relative overflow-hidden p-lg cursor-pointer border-linghuo-amber md:col-span-2 lg:col-span-1"
         >
           <div className="relative z-10">
-            <p className="text-label uppercase tracking-widest text-white/80">
+            <p className="text-label uppercase tracking-widest text-linghuo-amber">
               本周热门
             </p>
-            <h3 className="font-headline text-title mt-1">
+            <h3 className="font-headline text-title mt-1 text-deep-char">
               城市青年作品季
             </h3>
-            <p className="text-white/85 text-body mt-xs leading-relaxed max-w-[28ch]">
+            <p className="text-graphite text-body mt-xs leading-relaxed max-w-[28ch]">
               50 个设计向任务集中开放，AI 优先按你的画像推荐入选项。
             </p>
             <button
               type="button"
-              className="mt-md inline-flex items-center gap-1 text-body font-medium bg-white/20 hover:bg-white/30 px-md h-9 transition-colors"
+              className="mt-md inline-flex items-center gap-1 text-body font-medium bg-bone-cream-dim hover:bg-surface-container-low px-md h-9 border border-ash-veil transition-colors"
             >
               查看入选任务
               <Icon name="arrow_forward" size={14} />
@@ -117,7 +127,7 @@ export function TaskHallPage() {
           </div>
           <Icon
             name="local_fire_department"
-            className="absolute -right-3 -bottom-3 text-white/15"
+            className="absolute -right-3 -bottom-3 text-ash-veil"
             size={120}
             filled
           />

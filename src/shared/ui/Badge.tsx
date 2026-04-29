@@ -19,7 +19,7 @@ export function Badge({ tone = "graphite", children, className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-xs rounded px-2 py-0.5 font-label text-[11px] leading-none tracking-wide",
+        "inline-flex items-center gap-xs rounded px-2 py-0.5 font-label text-label",
         toneMap[tone],
         className,
       )}

@@ -49,7 +49,7 @@ export const Field = forwardRef<HTMLInputElement, FieldProps>(function Field(
         </div>
         {trailing}
       </div>
-      {hint ? <p className="text-[11px] text-warm-ash ml-xs">{hint}</p> : null}
+      {hint ? <p className="text-label text-warm-ash ml-xs">{hint}</p> : null}
     </div>
   );
 });

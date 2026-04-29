@@ -84,7 +84,7 @@ export function JobPublishPage() {
                   `招一位${tpl}的合作者，预算可议，希望能在两周内交付。`,
                 )
               }
-              className="px-md h-8  bg-surface-container-lowest border border-ash-veil text-label text-graphite hover:border-linghuo-amber hover:text-linghuo-amber transition-colors"
+              className="px-md h-8 bg-surface-container-lowest border border-ash-veil text-label text-graphite hover:border-linghuo-amber hover:text-linghuo-amber transition-colors"
             >
               {tpl}
             </button>
@@ -95,7 +95,7 @@ export function JobPublishPage() {
           value={intent}
           onChange={(e) => setIntent(e.target.value)}
           placeholder="例如：我想招一位有 3 年以上 SaaS 经验的高级 UI/UX，远程合作，薪资 15-25k。"
-          className="w-full px-md py-sm  bg-surface-container-lowest border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
+          className="w-full px-md py-sm bg-surface-container-lowest border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
         />
         <div className="flex gap-sm">
           <Button onClick={generate} disabled={!intent.trim() || generating}>
@@ -107,7 +107,7 @@ export function JobPublishPage() {
           </Button>
         </div>
         {ai ? (
-          <div className="bg-surface-container-lowest border border-ash-veil  p-md">
+          <div className="bg-surface-container-lowest border border-ash-veil p-md">
             <p className="text-label text-warm-ash uppercase tracking-widest mb-xs">
               AI 润色稿
             </p>
@@ -149,7 +149,7 @@ export function JobPublishPage() {
             value={requirement}
             onChange={(e) => setRequirement(e.target.value)}
             placeholder="清晰描述硬技能 + 软技能。AI 已经为你写好了一稿，你可以再加一两条。"
-            className="w-full px-md py-sm border border-ash-veil bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
+            className="w-full px-md py-sm bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
           />
         </div>
       </Card>

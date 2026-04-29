@@ -1,7 +1,9 @@
 /**
- * 个人端首页：国际主义风格
- * - 网格对齐、大量留白、直角、极少装饰
- * - 首屏以接任务为主
+ * 个人端首页：国际主义风格（强化版）
+ * - 非对称网格 3:1
+ * - Display 级标题 + 极大字号对比
+ * - 64px 大区块留白
+ * - tabular-nums 数字对齐
  */
 import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "@/shared/ui/Icon";
@@ -9,8 +11,10 @@ import { Button } from "@/shared/ui/Button";
 import { Card } from "@/shared/ui/Card";
 import { Badge } from "@/shared/ui/Badge";
 import { useAuth } from "@/shared/auth/store";
-import { taskHall } from "@/shared/mock/data";
+import { api } from "@/api/client";
 import { cn } from "@/shared/utils/cn";
+import { useEffect, useState } from "react";
+import type { TaskCard } from "@/api/types";
 
 const placeholderModules = [
   { name: "信用评分", icon: "shield_person" },
@@ -24,23 +28,41 @@ const placeholderModules = [
 export function UserHomePage() {
   const navigate = useNavigate();
   const { session } = useAuth();
-  const recommended = taskHall
-    .filter((t) => t.matchScore && t.matchScore >= 88)
-    .slice(0, 3);
+  const [recommended, setRecommended] = useState<TaskCard[]>([]);
+  const [loading, setLoading] = useState(true);
   const nickname = session?.realm === "user" ? session.nickname : "你";
   const completeness =
     session?.realm === "user" ? session.resumeCompleteness : 92;
 
+  useEffect(() => {
+    api.tasks.list().then((res) => {
+      const list = res.data.list
+        .filter((t) => t.matchScore && t.matchScore >= 88)
+        .slice(0, 3);
+      setRecommended(list);
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="space-y-2xl animate-pulse">
+        <div className="h-32 bg-bone-cream-dim border border-ash-veil" />
+        <div className="h-48 bg-bone-cream-dim border border-ash-veil" />
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-xl">
-      {/* 欢迎区 */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-lg">
-        <div className="md:col-span-2 space-y-lg">
+    <div className="space-y-2xl">
+      {/* 欢迎区：非对称 3:1 */}
+      <section className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
+        <div className="lg:col-span-3 space-y-xl">
           <div>
-            <h2 className="font-headline text-headline text-deep-char">
+            <h1 className="font-display text-display text-deep-char">
               你好，{nickname}
-            </h2>
-            <p className="text-body text-graphite mt-sm max-w-body leading-relaxed">
+            </h1>
+            <p className="text-body text-graphite mt-md max-w-body leading-relaxed">
               你的画像已更新，AI 为你找到了 {recommended.length} 个匹配岗位。继续完善资料，获得更精准的推荐。
             </p>
           </div>
@@ -61,7 +83,7 @@ export function UserHomePage() {
             <div className="border border-ash-veil p-md">
               <div className="flex items-center justify-between">
                 <span className="text-label text-graphite">资料完整度</span>
-                <span className="text-label font-medium text-deep-char">
+                <span className="text-label font-medium text-deep-char tabular-nums">
                   {completeness}%
                 </span>
               </div>
@@ -94,7 +116,7 @@ export function UserHomePage() {
 
       {/* AI 推荐 */}
       <section>
-        <header className="flex items-end justify-between mb-md pb-sm border-b border-ash-veil">
+        <header className="flex items-end justify-between mb-lg pb-sm border-b border-ash-veil">
           <div>
             <h2 className="font-headline text-headline text-deep-char">
               AI 智能匹配
@@ -120,9 +142,9 @@ export function UserHomePage() {
               className="p-lg cursor-pointer"
             >
               <div className="flex justify-between items-start mb-sm">
-                <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-misty-slate overflow-hidden">
+                <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
-                    <rect x="3" y="3" width="26" height="26" rx="2" fill="oklch(96% 0.008 60)" />
+                    <rect x="3" y="3" width="26" height="26" fill="oklch(96% 0.008 60)" />
                     <path
                       d="M9 22 L16 9 L23 22 Z"
                       fill="#EA5614"
@@ -135,7 +157,7 @@ export function UserHomePage() {
                   </svg>
                 </div>
                 <div className="text-right">
-                  <span className="block text-linghuo-amber font-bold text-title">
+                  <span className="block text-linghuo-amber font-bold text-title tabular-nums">
                     {t.budget}
                   </span>
                   <span className="text-label text-graphite">
@@ -173,7 +195,7 @@ export function UserHomePage() {
 
       {/* 占位能力 */}
       <section>
-        <header className="mb-md pb-sm border-b border-ash-veil">
+        <header className="mb-lg pb-sm border-b border-ash-veil">
           <h2 className="font-title text-title text-deep-char">
             敬请期待
           </h2>
@@ -212,7 +234,7 @@ export function UserHomePage() {
           className="p-lg flex items-center gap-md cursor-pointer"
           onClick={() => navigate("/u/posted-tasks")}
         >
-          <span className="h-12 w-12 bg-bone-cream-dim text-linghuo-amber flex items-center justify-center border border-ash-veil">
+          <span className="h-12 w-12 bg-bone-cream-dim text-deep-char flex items-center justify-center border border-ash-veil">
             <Icon name="add_task" />
           </span>
           <div className="flex-1">
@@ -228,7 +250,7 @@ export function UserHomePage() {
           className="p-lg flex items-center gap-md cursor-pointer hover:shadow-ambient-hover transition-shadow"
           onClick={() => navigate("/u/me/agreements")}
         >
-          <span className="h-12 w-12 bg-bone-cream-dim text-misty-slate flex items-center justify-center border border-ash-veil">
+          <span className="h-12 w-12 bg-bone-cream-dim text-deep-char flex items-center justify-center border border-ash-veil">
             <Icon name="description" />
           </span>
           <div className="flex-1">

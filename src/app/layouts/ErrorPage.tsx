@@ -18,7 +18,7 @@ export function ErrorPage({ code }: Props) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-bone-cream text-deep-char px-md">
       <div className="text-center max-w-md">
-        <p className="text-[12px] tracking-[0.4em] text-graphite uppercase">
+        <p className="text-label tracking-[0.4em] text-graphite uppercase">
           {code}
         </p>
         <h1 className="mt-sm font-display text-display text-deep-char">

@@ -133,9 +133,9 @@ export function AssistantPage() {
                           key={t.id}
                           type="button"
                           onClick={() => navigate(`/u/tasks/${t.id}`)}
-                          className="w-full text-left bg-surface-container-lowest border border-ash-veil  px-sm py-sm flex items-center gap-sm hover:border-linghuo-amber transition-colors"
+                          className="w-full text-left bg-surface-container-lowest border border-ash-veil px-sm py-sm flex items-center gap-sm hover:border-linghuo-amber transition-colors"
                         >
-                          <span className="h-9 w-9  bg-bone-cream-dim text-misty-slate flex items-center justify-center shrink-0">
+                          <span className="h-9 w-9 bg-bone-cream-dim text-misty-slate flex items-center justify-center shrink-0">
                             <Icon name="work_outline" size={18} />
                           </span>
                           <div className="flex-1 min-w-0">
@@ -163,7 +163,7 @@ export function AssistantPage() {
               <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-linghuo-amber flex items-center justify-center">
                 <Icon name="smart_toy" size={16} filled />
               </span>
-              <div className="px-md py-sm  bg-bone-cream-dim border border-ash-veil text-graphite text-label">
+              <div className="px-md py-sm bg-bone-cream-dim border border-ash-veil text-graphite text-label">
                 正在思考…
               </div>
             </div>
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-8  bg-bone-cream-dim border border-ash-veil text-label text-graphite hover:bg-surface-container-low"
+                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-label text-graphite hover:bg-surface-container-low"
               >
                 {p}
               </button>
@@ -195,7 +195,7 @@ export function AssistantPage() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="说点什么，比如「我最近作品集多了一组插画」"
-              className="flex-1 h-11 px-md border border-ash-veil bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none"
+              className="flex-1 h-11 px-md bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none"
             />
             <Button type="submit" disabled={!text.trim() || pending}>
               <Icon name="send" size={16} />

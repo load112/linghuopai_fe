@@ -45,12 +45,12 @@ export function RingGauge({
         role="img"
       >
         <div
-          className="absolute inset-[6px] rounded-full bg-surface-container-lowest flex items-center justify-center text-[14px] font-headline text-deep-char"
+          className="absolute inset-[6px] rounded-full bg-surface-container-lowest flex items-center justify-center text-label font-headline text-deep-char"
         >
           {text}
         </div>
       </div>
-      <span className="text-[11px] text-graphite">{label}</span>
+      <span className="text-label text-graphite">{label}</span>
     </div>
   );
 }

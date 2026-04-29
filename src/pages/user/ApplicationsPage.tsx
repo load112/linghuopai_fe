@@ -10,8 +10,10 @@ import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
 import { Badge } from "@/shared/ui/Badge";
 import { Button } from "@/shared/ui/Button";
-import { taskHall } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { ApplicationItem } from "@/api/types";
 import { cn } from "@/shared/utils/cn";
+import { useEffect } from "react";
 
 type ApplicationStage =
   | "INTERVIEW"
@@ -29,51 +31,6 @@ interface MyApplication {
   progress?: number;
   invite?: { hrName: string; hrTitle: string; hrInitial: string; expireIn: string };
 }
-
-const myApplications: MyApplication[] = [
-  {
-    id: "a-1",
-    taskId: "t-001",
-    stage: "INVITED",
-    lastUpdate: "今天 14:21",
-    hint: "企业方已邀请你进一步沟通，可前往任务详情查看。",
-    invite: {
-      hrName: "HR 王经理",
-      hrTitle: "极光科技工作室",
-      hrInitial: "王",
-      expireIn: "24 小时内答复",
-    },
-  },
-  {
-    id: "a-2",
-    taskId: "t-002",
-    stage: "SUBMITTED",
-    lastUpdate: "今天 09:48",
-    hint: "AI 报告已交给企业方，等待企业反馈。企业方正在查看你的画像与作品集。",
-  },
-  {
-    id: "a-3",
-    taskId: "t-003",
-    stage: "INTERVIEW",
-    lastUpdate: "昨天 21:30",
-    hint: "AI 面试还差最后一段问答即可完成，可随时回到面试页继续。",
-    progress: 65,
-  },
-  {
-    id: "a-4",
-    taskId: "t-006",
-    stage: "AWAIT_CONFIRM",
-    lastUpdate: "2 天前",
-    hint: "AI 面试已完成，等你确认是否投递。",
-  },
-  {
-    id: "a-5",
-    taskId: "t-005",
-    stage: "FINISHED",
-    lastUpdate: "上周",
-    hint: "本次合作已结束，欢迎在我的协议查看记录。",
-  },
-];
 
 const stageMeta: Record<
   ApplicationStage,
@@ -96,17 +53,33 @@ const tabs: Array<{ key: TabKey; label: string }> = [
 
 export function ApplicationsPage() {
   const [tab, setTab] = useState<TabKey>("ALL");
+  const [apps, setApps] = useState<ApplicationItem[]>([]);
+  const [stats, setStats] = useState({ total: 0, interviewing: 0 });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.applications.list().then((res) => {
+      setApps(res.data.list);
+      setStats(res.data.stats);
+      setLoading(false);
+    });
+  }, []);
 
   const filtered = useMemo(() => {
-    if (tab === "ALL") return myApplications;
+    if (tab === "ALL") return apps;
     if (tab === "FINISHED")
-      return myApplications.filter((a) => a.stage === "FINISHED");
-    return myApplications.filter((a) => a.stage !== "FINISHED");
-  }, [tab]);
+      return apps.filter((a) => a.stage === "FINISHED");
+    return apps.filter((a) => a.stage !== "FINISHED");
+  }, [tab, apps]);
 
-  const interviewCount = myApplications.filter(
-    (a) => a.stage === "INTERVIEW",
-  ).length;
+  if (loading) {
+    return (
+      <div className="space-y-md animate-pulse">
+        <div className="h-24 bg-bone-cream-dim border border-ash-veil" />
+        <div className="h-48 bg-bone-cream-dim border border-ash-veil" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-md">
@@ -148,13 +121,13 @@ export function ApplicationsPage() {
         <Card tone="warm" className="p-md md:p-lg">
           <p className="text-label text-graphite">累计参加</p>
           <p className="font-headline text-headline text-linghuo-amber mt-1">
-            {myApplications.length}
+            {stats.total}
           </p>
         </Card>
         <Card tone="warm" className="p-md md:p-lg">
           <p className="text-label text-graphite">面试中</p>
           <p className="font-headline text-headline text-linghuo-amber mt-1">
-            {interviewCount}
+            {stats.interviewing}
           </p>
         </Card>
         <Card
@@ -175,7 +148,6 @@ export function ApplicationsPage() {
       {/* 列表 */}
       <ul className="space-y-md">
         {filtered.map((app) => {
-          const task = taskHall.find((t) => t.id === app.taskId);
           const meta = stageMeta[app.stage];
           return (
             <li key={app.id}>
@@ -197,17 +169,17 @@ export function ApplicationsPage() {
                     </span>
                   </div>
                   <span className="text-linghuo-amber font-headline text-title whitespace-nowrap">
-                    {task?.budget ?? ""}
+                    {app.taskBudget}
                   </span>
                 </header>
 
                 <div>
                   <h3 className="font-title text-title text-deep-char">
-                    {task?.title ?? "任务"}
+                    {app.taskTitle}
                   </h3>
                   <p className="text-label text-graphite mt-xs flex items-center gap-1">
                     <Icon name="business" size={14} />
-                    {task?.publisher ?? ""}
+                    {app.publisher}
                   </p>
                 </div>
 

@@ -6,7 +6,9 @@ import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
 import { Badge } from "@/shared/ui/Badge";
 import { Button } from "@/shared/ui/Button";
-import { enterpriseJobs } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { JobItem } from "@/api/types";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/shared/auth/store";
 
 export function JobsPage() {
@@ -14,6 +16,13 @@ export function JobsPage() {
   const { session } = useAuth();
   const qualified =
     session?.realm === "enterprise" ? session.qualified : false;
+  const [jobs, setJobs] = useState<JobItem[]>([]);
+
+  useEffect(() => {
+    if (qualified) {
+      api.enterprise.jobs().then((res) => setJobs(res.data.list));
+    }
+  }, [qualified]);
 
   return (
     <div className="space-y-lg">
@@ -55,7 +64,7 @@ export function JobsPage() {
       ) : null}
 
       <ul className="space-y-md">
-        {enterpriseJobs.map((j) => (
+        {jobs.map((j) => (
           <Card key={j.id} className="p-lg flex flex-col md:flex-row md:items-center gap-md">
             <div className="flex-1 min-w-0">
               <header className="flex flex-wrap items-center gap-sm mb-xs">

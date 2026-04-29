@@ -49,10 +49,10 @@ export function EnterpriseLayout() {
               <Icon name="domain" filled />
             </div>
             <div>
-              <h2 className="text-linghuo-amber font-bold tracking-widest text-[12px]">
+              <h2 className="text-linghuo-amber font-bold tracking-widest text-label">
                 企业管理中心
               </h2>
-              <p className="text-[11px] text-graphite mt-0.5">
+              <p className="text-label text-graphite mt-0.5">
                 资质状态：
                 <span className={enterprise?.qualified ? "text-misty-slate" : "text-linghuo-amber"}>
                   {enterprise?.qualified ? "已认证" : "待认证"}
@@ -69,7 +69,7 @@ export function EnterpriseLayout() {
               onClick={() => setNavOpen(false)}
               className={({ isActive }) =>
                 cn(
-                  "flex items-center gap-3 px-md py-sm text-[13px] font-medium transition-all",
+                  "flex items-center gap-3 px-md py-sm text-body font-medium transition-all",
                   isActive
                     ? "bg-bone-cream-dim text-linghuo-amber border-r-2 border-linghuo-amber"
                     : "text-graphite hover:bg-bone-cream-dim/60 hover:text-deep-char",
@@ -84,7 +84,7 @@ export function EnterpriseLayout() {
         <button
           type="button"
           onClick={logout}
-          className="m-3 px-md py-sm text-[12px] text-graphite hover:text-deep-char hover:bg-bone-cream-dim flex items-center gap-2 transition-colors"
+          className="m-3 px-md py-sm text-label text-graphite hover:text-deep-char hover:bg-bone-cream-dim flex items-center gap-2 transition-colors"
         >
           <Icon name="logout" size={16} />
           退出登录
@@ -111,10 +111,10 @@ export function EnterpriseLayout() {
               <Icon name="menu" />
             </button>
             <div className="min-w-0">
-              <h1 className="font-headline text-[16px] md:text-[18px] text-deep-char tracking-tight truncate">
+              <h1 className="font-headline text-title text-deep-char tracking-tight truncate">
                 {enterprise?.enterpriseName ?? "企业端"}
               </h1>
-              <p className="text-[11px] text-graphite truncate">
+              <p className="text-label text-graphite truncate">
                 {enterprise?.qualified ? "资质已认证" : "请尽快完成资质认证"}
               </p>
             </div>
@@ -135,7 +135,7 @@ export function EnterpriseLayout() {
                 to={tab.to}
                 className={({ isActive }) =>
                   cn(
-                    "flex flex-col items-center justify-center py-2 gap-0.5 text-[11px]",
+                    "flex flex-col items-center justify-center py-2 gap-0.5 text-label",
                     isActive ? "text-linghuo-amber" : "text-graphite",
                   )
                 }

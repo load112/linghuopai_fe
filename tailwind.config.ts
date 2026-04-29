@@ -84,6 +84,8 @@ export default {
         md: "16px",
         lg: "24px",
         xl: "40px",
+        "2xl": "64px",
+        "3xl": "96px",
         "container-max-body": "75ch",
       },
       fontFamily: {

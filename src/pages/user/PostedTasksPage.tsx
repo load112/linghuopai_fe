@@ -127,7 +127,7 @@ export function PostedTasksPage() {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               placeholder="例如：周末活动主持人，有舞台经验，杭州滨江，时薪 200 上下。"
-              className="w-full px-md py-sm border border-ash-veil bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
+              className="w-full px-md py-sm bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none resize-none"
             />
             <div className="mt-sm flex gap-sm">
               <Button variant="secondary" size="sm" onClick={polish}>
@@ -144,7 +144,7 @@ export function PostedTasksPage() {
             </div>
           </div>
           {polished ? (
-            <div className="bg-bone-cream-dim border border-ash-veil  p-md">
+            <div className="bg-bone-cream-dim border border-ash-veil p-md">
               <p className="text-label text-warm-ash uppercase tracking-widest mb-xs">
                 AI 润色稿（你可以直接发布，也可以再修改）
               </p>

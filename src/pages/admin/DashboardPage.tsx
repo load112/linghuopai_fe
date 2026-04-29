@@ -5,71 +5,94 @@
  */
 import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
-import { adminDashboardMetrics } from "@/shared/mock/data";
+import { api } from "@/api/client";
+import type { AdminDashboardMetrics, AdminEventLog } from "@/api/types";
+import { useState, useEffect } from "react";
 
-const sections = [
-  {
-    key: "registration",
-    icon: "person_add",
-    headline: adminDashboardMetrics.registration.weekTotal,
-    deltaLabel: `${adminDashboardMetrics.registration.weekDelta > 0 ? "+" : ""}${adminDashboardMetrics.registration.weekDelta}% / 周`,
-    sub: `活跃率 ${(adminDashboardMetrics.registration.activeRate * 100).toFixed(0)}%`,
-    title: adminDashboardMetrics.registration.title,
-  },
-  {
-    key: "tasks",
-    icon: "work",
-    headline: adminDashboardMetrics.taskFlow.publishedThisWeek,
-    deltaLabel: `${adminDashboardMetrics.taskFlow.delta}% / 周`,
-    sub: `进行中 ${adminDashboardMetrics.taskFlow.inProgress}`,
-    title: adminDashboardMetrics.taskFlow.title,
-  },
-  {
-    key: "ai",
-    icon: "auto_awesome",
-    headline: adminDashboardMetrics.aiScreening.reports,
-    deltaLabel: `面试 ${adminDashboardMetrics.aiScreening.sessions} 次`,
-    sub: `报告转化率 ${(adminDashboardMetrics.aiScreening.convertRate * 100).toFixed(0)}%`,
-    title: adminDashboardMetrics.aiScreening.title,
-  },
-  {
-    key: "completion",
-    icon: "check_circle",
-    headline: 312,
-    deltaLabel: "+5.2% / 周",
-    sub: "已结束任务 / 总任务",
-    title: "任务完成率",
-  },
-];
-
-const eventLog = [
-  {
-    time: "10:42",
-    type: "任务发布",
-    msg: "雾灰设计事务所发布「企业内刊插画绘制」",
-    tone: "amber",
-  },
-  {
-    time: "10:31",
-    type: "AI 初筛",
-    msg: "陈领活完成「移动端 UI 界面优化」初筛，报告已生成",
-    tone: "amber",
-  },
-  {
-    time: "10:18",
-    type: "邀约沟通",
-    msg: "极光科技工作室向林沐风发起邀约",
-    tone: "slate",
-  },
-  {
-    time: "09:55",
-    type: "用户注册",
-    msg: "139****0017 完成手机号注册",
-    tone: "graphite",
-  },
-];
 
 export function AdminDashboardPage() {
+  const [metrics, setMetrics] = useState<AdminDashboardMetrics | null>(null);
+  const [events, setEvents] = useState<AdminEventLog[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.admin.dashboard().then((res) => {
+      setMetrics(res.data.metrics);
+      setEvents(res.data.events);
+      setLoading(false);
+    });
+  }, []);
+
+  const sections = metrics
+    ? [
+        {
+          key: "registration",
+          icon: "person_add" as const,
+          headline: metrics.registration.weekTotal,
+          deltaLabel: `${metrics.registration.weekDelta > 0 ? "+" : ""}${metrics.registration.weekDelta}% / 周`,
+          sub: `活跃率 ${(metrics.registration.activeRate * 100).toFixed(0)}%`,
+          title: metrics.registration.title,
+        },
+        {
+          key: "tasks",
+          icon: "work" as const,
+          headline: metrics.taskFlow.publishedThisWeek,
+          deltaLabel: `${metrics.taskFlow.delta}% / 周`,
+          sub: `进行中 ${metrics.taskFlow.inProgress}`,
+          title: metrics.taskFlow.title,
+        },
+        {
+          key: "ai",
+          icon: "auto_awesome" as const,
+          headline: metrics.aiScreening.reports,
+          deltaLabel: `面试 ${metrics.aiScreening.sessions} 次`,
+          sub: `报告转化率 ${(metrics.aiScreening.convertRate * 100).toFixed(0)}%`,
+          title: metrics.aiScreening.title,
+        },
+        {
+          key: "completion",
+          icon: "check_circle" as const,
+          headline: metrics.funnel.enterCommunication,
+          deltaLabel: "+5.2% / 周",
+          sub: "已结束任务 / 总任务",
+          title: "任务完成率",
+        },
+      ]
+    : [];
+
+  const funnel = metrics
+    ? [
+        { label: "新报名", value: metrics.funnel.newApply, percent: 100 },
+        {
+          label: "进入 AI 面试",
+          value: metrics.funnel.enterInterview,
+          percent: Math.round((metrics.funnel.enterInterview / metrics.funnel.newApply) * 100),
+        },
+        {
+          label: "报告生成",
+          value: metrics.funnel.reportGenerated,
+          percent: Math.round((metrics.funnel.reportGenerated / metrics.funnel.newApply) * 100),
+        },
+        {
+          label: "进入沟通",
+          value: metrics.funnel.enterCommunication,
+          percent: Math.round((metrics.funnel.enterCommunication / metrics.funnel.newApply) * 100),
+        },
+      ]
+    : [];
+
+  if (loading) {
+    return (
+      <div className="space-y-lg animate-pulse">
+        <div className="h-24 bg-bone-cream-dim border border-ash-veil" />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+          <div className="lg:col-span-2 h-64 bg-bone-cream-dim border border-ash-veil" />
+          <div className="h-64 bg-bone-cream-dim border border-ash-veil" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-lg">
       <header>
@@ -108,12 +131,7 @@ export function AdminDashboardPage() {
             </span>
           </header>
           <ul className="space-y-md">
-            {[
-              { label: "新报名", value: 1280, percent: 100 },
-              { label: "进入 AI 面试", value: 1024, percent: 80 },
-              { label: "报告生成", value: 762, percent: 60 },
-              { label: "进入沟通", value: 312, percent: 24 },
-            ].map((row) => (
+            {funnel.map((row) => (
               <li key={row.label}>
                 <div className="flex items-center justify-between text-label mb-xs">
                   <span className="text-graphite">{row.label}</span>
@@ -137,7 +155,7 @@ export function AdminDashboardPage() {
             <span className="text-label text-warm-ash">最近 1 小时</span>
           </header>
           <ul className="space-y-md">
-            {eventLog.map((ev, idx) => (
+            {events.map((ev, idx) => (
               <li key={idx} className="flex items-start gap-md">
                 <span className="text-label text-warm-ash w-12 mt-1 shrink-0">
                   {ev.time}
@@ -146,15 +164,7 @@ export function AdminDashboardPage() {
                   <p className="text-body text-deep-char">{ev.msg}</p>
                   <p className="text-label text-graphite mt-0.5">{ev.type}</p>
                 </div>
-                <span
-                  className={`mt-1 h-2 w-2 shrink-0 ${
-                    ev.tone === "amber"
-                      ? "bg-linghuo-amber"
-                      : ev.tone === "slate"
-                        ? "bg-misty-slate"
-                        : "bg-graphite"
-                  }`}
-                />
+                <span className="mt-1 h-2 w-2 shrink-0 bg-graphite" />
               </li>
             ))}
           </ul>
