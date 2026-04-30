@@ -119,7 +119,7 @@ export function AssistantPage() {
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-[15px] font-normal leading-[1.6] tracking-[-0.2px] break-words">{m.text}</p>
+                <p className="text-[15px] font-normal leading-[1.8] tracking-[-0.2px] break-words">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-auto py-2.5 bg-bone-cream-dim border border-ash-veil text-[13px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left"
+                className="px-md h-auto py-2.5 bg-bone-cream-dim border border-ash-veil text-[14px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left"
               >
                 {p}
               </button>
@@ -200,13 +200,13 @@ export function AssistantPage() {
             <Button
               type="submit"
               size="lg"
-              className="min-w-[60px] px-5 text-[15px]"
+              className="min-w-[60px] px-5 text-[15px] whitespace-nowrap"
               disabled={!text.trim() || pending}
             >
               发送
             </Button>
           </form>
-          <p className="text-label text-graphite opacity-60">
+          <p className="text-[12px] font-medium text-graphite">
             助手不直接改写正式资料；它只生成草案，确认权一直在你这里。
           </p>
         </div>

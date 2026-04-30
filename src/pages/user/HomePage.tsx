@@ -141,8 +141,8 @@ export function UserHomePage() {
               onClick={() => navigate(`/u/tasks/${t.id}`)}
               className="p-md md:p-lg cursor-pointer"
             >
-              <div className="flex gap-sm items-start mb-md">
-                <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden shrink-0">
+              <div className="flex gap-sm items-center mb-md">
+                <div className="h-10 w-10 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden shrink-0">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
                     <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
                   </svg>
@@ -161,7 +161,7 @@ export function UserHomePage() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-xs mt-1">
+                  <div className="flex flex-wrap gap-xs mt-2">
                     {t.tags.map((tag) => (
                       <Badge key={tag} tone="graphite">
                         {tag}

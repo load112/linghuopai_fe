@@ -90,7 +90,7 @@ export function TaskHallPage() {
               type="button"
               onClick={() => setActive(f.key)}
               className={cn(
-                "shrink-0 px-md py-sm text-title font-medium transition-colors relative",
+                "shrink-0 px-md py-sm text-[17px] font-medium transition-colors relative",
                 active === f.key
                   ? "text-deep-char"
                   : "text-graphite hover:text-deep-char",
@@ -179,7 +179,7 @@ export function TaskHallPage() {
               {t.matchScore ? (
                 <div className="text-right space-y-0.5">
                   <p className="text-label text-graphite">AI 匹配度</p>
-                  <p className="font-headline text-title text-misty-slate">
+                  <p className="font-headline text-title text-graphite">
                     {t.matchScore}%
                   </p>
                 </div>

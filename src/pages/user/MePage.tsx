@@ -26,13 +26,13 @@ export function MePage() {
   const nickname = session?.realm === "user" ? session.nickname : "你";
 
   return (
-    <div className="space-y-lg">
+    <div className="space-y-xl">
       <Card className="p-md md:p-lg flex items-center gap-md">
         <span className="h-14 w-14 bg-linghuo-amber text-white flex items-center justify-center text-title font-headline">
           {nickname.slice(0, 1)}
         </span>
         <div className="flex-1 min-w-0">
-          <h2 className="font-headline text-headline text-deep-char">
+          <h2 className="font-headline text-headline text-deep-char font-medium">
             {nickname}
           </h2>
           <p className="text-label text-graphite mt-sm leading-[1.5]">
