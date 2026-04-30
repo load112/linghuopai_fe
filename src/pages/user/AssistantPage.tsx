@@ -119,7 +119,7 @@ export function AssistantPage() {
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-[15px] font-normal leading-[1.7] tracking-[-0.2px] break-words">{m.text}</p>
+                <p className="text-[15px] font-normal leading-[1.6] tracking-[-0.2px] break-words">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
