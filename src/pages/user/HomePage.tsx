@@ -61,6 +61,7 @@ export function UserHomePage() {
           <div>
             <h1 className="font-headline text-headline text-deep-char">
               你好，{nickname}
+              <span className="text-red-600 ml-2">[已刷新]</span>
             </h1>
             <p className="text-body text-graphite mt-md max-w-body leading-[1.7]">
               你的画像已更新，AI 为你找到了 {recommended.length} 个匹配岗位。继续完善资料，获得更精准的推荐。
