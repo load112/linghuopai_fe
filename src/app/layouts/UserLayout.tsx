@@ -16,17 +16,9 @@ const tabs = [
   { to: "/u/me", label: "我的", icon: "person" },
 ] as const;
 
-const pageTitles: Record<string, string> = {
-  "/u/home": "首页",
-  "/u/tasks": "任务大厅",
-  "/u/assistant": "AI 助手",
-  "/u/me": "我的",
-};
-
 export function UserLayout() {
   const { session, logout } = useAuth();
   const location = useLocation();
-  const pageTitle = pageTitles[location.pathname];
 
   return (
     <div className="min-h-screen flex flex-col bg-bone-cream text-deep-char">
@@ -92,11 +84,6 @@ export function UserLayout() {
 
       <main className="flex-1 pb-24 md:pb-12">
         <div className="max-w-screen-xl mx-auto px-md md:px-lg pt-md md:pt-lg">
-          {pageTitle ? (
-            <h1 className="font-headline text-pageTitle text-deep-char mb-md">
-              {pageTitle}
-            </h1>
-          ) : null}
           <Outlet key={location.pathname} />
         </div>
       </main>
