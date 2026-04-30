@@ -156,9 +156,6 @@ export function UserHomePage() {
                       <span className="block text-title text-graphite tabular-nums leading-tight">
                         {t.budget}
                       </span>
-                      <span className="block text-label text-warm-ash">
-                        {t.budgetType}
-                      </span>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-xs mt-1">
