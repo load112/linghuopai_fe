@@ -32,7 +32,7 @@ export function MePage() {
           {nickname.slice(0, 1)}
         </span>
         <div className="flex-1 min-w-0">
-          <h2 className="font-headline text-headline text-deep-char font-medium">
+          <h2 className="text-cardTitle text-deep-char">
             {nickname}
           </h2>
           <p className="text-label text-graphite mt-sm leading-[1.5]">
@@ -50,7 +50,7 @@ export function MePage() {
       </Card>
 
       <Card className="p-md md:p-lg space-y-sm">
-        <h3 className="font-title text-title text-deep-char">常用</h3>
+        <h3 className="font-headline text-sectionTitle text-deep-char">常用</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-sm">
           <Link
             to="/u/applications"
@@ -80,7 +80,7 @@ export function MePage() {
       </Card>
 
       <Card tone="warm" className="p-md md:p-md md:p-lg">
-        <h3 className="font-title text-title text-deep-char">敬请期待</h3>
+        <h3 className="font-headline text-sectionTitle text-deep-char">敬请期待</h3>
         <p className="text-body text-graphite mt-xs leading-[1.7]">
           这些能力即将开放，仅展示，不可点。
         </p>
@@ -93,7 +93,7 @@ export function MePage() {
               aria-disabled
             >
               <Icon name={m.icon} className="text-warm-ash" size={22} />
-              <p className="text-label text-graphite mt-xs font-medium">{m.name}</p>
+              <p className="text-caption text-graphite mt-xs">{m.name}</p>
               <p className="text-label text-warm-ash mt-1 uppercase tracking-widest opacity-50">
                 即将开放
               </p>

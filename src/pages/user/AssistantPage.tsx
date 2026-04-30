@@ -90,7 +90,7 @@ export function AssistantPage() {
             <Icon name="smart_toy" filled size={18} />
           </span>
           <div>
-            <h2 className="font-title text-title text-deep-char">个人 AI 助手</h2>
+            <h2 className="text-cardTitle text-deep-char">个人 AI 助手</h2>
             <p className="text-label text-graphite">
               不替你做决定，但可以一路陪你补完资料
             </p>
@@ -119,7 +119,7 @@ export function AssistantPage() {
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-[15px] font-normal leading-[1.6] break-words">{m.text}</p>
+                <p className="text-body break-words">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-auto py-2.5 bg-bone-cream-dim border border-ash-veil text-[14px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left"
+                className="px-md h-auto py-2.5 bg-bone-cream-dim border border-ash-veil text-body text-graphite hover:bg-surface-container-low leading-tight text-left"
               >
                 {p}
               </button>
@@ -200,7 +200,7 @@ export function AssistantPage() {
             <Button
               type="submit"
               size="lg"
-              className="min-w-[60px] px-5 text-[15px] whitespace-nowrap"
+              className="min-w-[60px] px-5 text-body whitespace-nowrap"
               disabled={!text.trim() || pending}
             >
               发送
@@ -214,7 +214,7 @@ export function AssistantPage() {
 
       <aside className="space-y-lg">
         <Card tone="warm" className="p-md md:p-lg">
-          <h3 className="font-title text-title text-deep-char">能做的事</h3>
+          <h3 className="text-cardTitle text-deep-char">能做的事</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             {[
               { i: "description", t: "解析简历内容并生成画像" },
@@ -229,7 +229,7 @@ export function AssistantPage() {
           </ul>
         </Card>
         <Card className="p-md md:p-lg">
-          <h3 className="font-title text-title text-deep-char">不做的事</h3>
+          <h3 className="text-cardTitle text-deep-char">不做的事</h3>
           <ul className="mt-md space-y-sm text-body text-graphite">
             <li className="flex items-start gap-sm">
               <Icon name="block" size={16} className="text-warm-ash mt-0.5" />

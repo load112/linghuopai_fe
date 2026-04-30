@@ -59,7 +59,7 @@ export function UserHomePage() {
       <section className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
         <div className="lg:col-span-3 space-y-xl">
           <div>
-            <h1 className="font-headline text-headline text-deep-char">
+            <h1 className="text-cardTitle font-normal text-deep-char">
               你好，{nickname}
             </h1>
             <p className="text-body text-graphite mt-md max-w-body leading-[1.7]">
@@ -72,7 +72,7 @@ export function UserHomePage() {
                 能力画像
               </span>
               <div className="flex items-baseline gap-xs mt-1">
-                <span className="font-headline text-headline text-deep-char">
+                <span className="text-cardTitle text-deep-char">
                   UI 设计
                 </span>
                 <span className="text-label text-warm-ash">
@@ -83,7 +83,7 @@ export function UserHomePage() {
             <div className="border border-ash-veil p-md">
               <div className="flex items-center justify-between">
                 <span className="text-label text-graphite">资料完整度</span>
-                <span className="text-title font-medium text-deep-char tabular-nums">
+                <span className="text-cardTitle text-deep-char tabular-nums">
                   {completeness}%
                 </span>
               </div>
@@ -99,7 +99,7 @@ export function UserHomePage() {
 
         <div className="border border-ash-veil bg-surface-container-lowest p-md md:p-lg flex flex-col justify-between">
           <div>
-            <h3 className="font-title text-title text-deep-char">任务大厅</h3>
+            <h3 className="font-headline text-sectionTitle text-deep-char">任务大厅</h3>
             <p className="text-body text-graphite mt-xs">
               探索新增灵活用工岗位，按你的画像智能排序。
             </p>
@@ -149,11 +149,11 @@ export function UserHomePage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-sm">
-                    <h3 className="font-title text-title text-deep-char truncate leading-tight">
+                    <h3 className="text-cardTitle text-deep-char truncate leading-tight">
                       {t.title}
                     </h3>
                     <div className="text-right shrink-0 flex items-baseline gap-1">
-                      <span className="text-title text-graphite tabular-nums leading-tight">
+                      <span className="text-cardTitle text-graphite tabular-nums leading-tight">
                         {t.budget}
                       </span>
                       <span className="text-label text-warm-ash">
@@ -178,7 +178,7 @@ export function UserHomePage() {
                     size={16}
                     className="text-graphite mt-0.5 shrink-0"
                   />
-                  <p className="text-[15px] font-normal text-graphite leading-[1.7]">
+                  <p className="text-body text-graphite">
                     "{t.matchHint}"
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export function UserHomePage() {
       {/* 占位能力 */}
       <section>
         <header className="mb-md md:mb-lg pb-sm border-b border-ash-veil">
-          <h2 className="font-title text-title text-deep-char">
+          <h2 className="font-headline text-sectionTitle text-deep-char">
             敬请期待
           </h2>
           <p className="text-body text-graphite mt-xs">
@@ -233,7 +233,7 @@ export function UserHomePage() {
             <Icon name="add_task" />
           </span>
           <div className="flex-1">
-            <h3 className="font-title text-title text-deep-char">我也想发任务</h3>
+            <h3 className="text-cardTitle text-deep-char">我也想发任务</h3>
             <p className="text-body text-graphite mt-xs">
               复用 AI 帮你润色描述，发布后自动进入任务大厅。
             </p>
@@ -249,7 +249,7 @@ export function UserHomePage() {
             <Icon name="description" />
           </span>
           <div className="flex-1">
-            <h3 className="font-title text-title text-deep-char">我的协议</h3>
+            <h3 className="text-cardTitle text-deep-char">我的协议</h3>
             <p className="text-body text-graphite mt-xs">
               查看与企业之间签署过的服务协议。本版为占位说明页。
             </p>

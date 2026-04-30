@@ -96,11 +96,17 @@ export default {
         title: ["Manrope", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei", "sans-serif"],
       },
       fontSize: {
-        body: ["clamp(14px, 2vw, 15px)", { lineHeight: "1.6", fontWeight: "400" }],
+        /* 固定 5 级字号体系（移动端），消除 15/17px 中间态 */
+        pageTitle: ["22px", { lineHeight: "1.3", fontWeight: "600" }],
+        sectionTitle: ["18px", { lineHeight: "1.4", fontWeight: "500" }],
+        cardTitle: ["16px", { lineHeight: "1.35", fontWeight: "500" }],
+        body: ["14px", { lineHeight: "1.6", fontWeight: "400" }],
+        caption: ["12px", { lineHeight: "1.35", fontWeight: "400" }],
+        /* 兼容旧名（映射到新值，逐步替换） */
         headline: ["18px", { lineHeight: "1.4", fontWeight: "500" }],
+        title: ["16px", { lineHeight: "1.35", fontWeight: "500" }],
+        label: ["12px", { lineHeight: "1.35", fontWeight: "400" }],
         display: ["clamp(1.5rem, 4vw, 2rem)", { lineHeight: "1.1", fontWeight: "500" }],
-        label: ["clamp(11px, 1.5vw, 12px)", { lineHeight: "1.35", letterSpacing: "0.04em", fontWeight: "500" }],
-        title: ["clamp(15px, 2.5vw, 17px)", { lineHeight: "1.35", fontWeight: "500" }],
       },
       transitionTimingFunction: {
         "out-quart": "cubic-bezier(0.165, 0.84, 0.44, 1)",

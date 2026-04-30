@@ -90,7 +90,7 @@ export function TaskHallPage() {
               type="button"
               onClick={() => setActive(f.key)}
               className={cn(
-                "shrink-0 px-md py-sm text-[17px] font-medium transition-colors relative",
+                "shrink-0 px-md py-sm text-body font-medium transition-colors relative",
                 active === f.key
                   ? "text-deep-char"
                   : "text-graphite hover:text-deep-char",
@@ -114,7 +114,7 @@ export function TaskHallPage() {
             <p className="text-label uppercase tracking-widest text-deep-char">
               本周热门
             </p>
-            <h3 className="font-headline text-title mt-1 text-deep-char">
+            <h3 className="font-headline text-sectionTitle mt-1 text-deep-char">
               城市青年作品季
             </h3>
             <p className="text-graphite text-body mt-xs leading-[1.7] max-w-[28ch]">
@@ -145,7 +145,7 @@ export function TaskHallPage() {
           >
             <div className="flex items-start justify-between gap-sm">
               <div>
-                <h3 className="font-title text-title text-deep-char">
+                <h3 className="text-cardTitle text-deep-char">
                   {t.title}
                 </h3>
                 <p className="text-label text-graphite mt-xs flex items-center gap-xs">
@@ -172,14 +172,14 @@ export function TaskHallPage() {
             <div className="mt-auto flex justify-between items-baseline">
               <div className="space-y-0.5">
                 <p className="text-label text-warm-ash">{t.budgetType}</p>
-                <p className="text-graphite font-headline text-title">
+                <p className="text-graphite text-cardTitle">
                   {t.budget}
                 </p>
               </div>
               {t.matchScore ? (
                 <div className="text-right space-y-0.5">
                   <p className="text-label text-graphite">AI 匹配度</p>
-                  <p className="font-headline text-title text-graphite">
+                  <p className="text-cardTitle text-graphite">
                     {t.matchScore}%
                   </p>
                 </div>
