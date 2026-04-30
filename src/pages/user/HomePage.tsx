@@ -147,21 +147,21 @@ export function UserHomePage() {
                     <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
                   </svg>
                 </div>
-                <div className="flex-1 min-w-0 space-y-1">
-                  <div className="flex items-baseline justify-between gap-sm">
-                    <h3 className="font-title text-title text-deep-char truncate">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-sm">
+                    <h3 className="font-title text-title text-deep-char truncate leading-tight">
                       {t.title}
                     </h3>
-                    <div className="text-right shrink-0">
-                      <span className="block text-title text-graphite tabular-nums">
+                    <div className="text-right shrink-0 leading-none">
+                      <span className="block text-title text-graphite tabular-nums leading-tight">
                         {t.budget}
                       </span>
-                      <span className="text-label text-warm-ash">
+                      <span className="block text-label text-warm-ash">
                         {t.budgetType}
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-xs">
+                  <div className="flex flex-wrap gap-xs mt-1">
                     {t.tags.map((tag) => (
                       <Badge key={tag} tone="graphite">
                         {tag}
