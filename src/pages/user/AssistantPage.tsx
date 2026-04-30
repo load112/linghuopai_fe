@@ -113,15 +113,15 @@ export function AssistantPage() {
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-lg py-md break-keep",
+                  "max-w-[75%] px-[18px] pt-4 pb-[18px] break-keep rounded-2xl shadow-ambient-hover",
                   m.from === "ai"
                     ? "bg-[#F8F7F4] border border-ash-veil text-deep-char"
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-body leading-[1.8] tracking-[-0.2px]">{m.text}</p>
+                <p className="text-[15px] font-normal leading-[1.8] tracking-[-0.2px]">{m.text}</p>
                 {m.hint ? (
-                  <p className="mt-1 text-label opacity-70">{m.hint}</p>
+                  <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
                 {m.taskCardIds?.length ? (
                   <div className="mt-sm space-y-sm">
@@ -163,7 +163,7 @@ export function AssistantPage() {
               <span className="h-8 w-8 border border-ash-veil bg-bone-cream-dim text-deep-char flex items-center justify-center">
                 <Icon name="smart_toy" size={16} filled />
               </span>
-              <div className="px-md py-sm bg-[#F8F7F4] border border-ash-veil text-graphite text-label">
+              <div className="px-md py-sm bg-[#F8F7F4] border border-ash-veil text-graphite text-label rounded-2xl">
                 正在思考…
               </div>
             </div>
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-8 bg-bone-cream-dim border border-ash-veil text-body text-graphite hover:bg-surface-container-low truncate"
+                className="px-md h-[46px] bg-bone-cream-dim border border-ash-veil text-[14px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left py-1"
               >
                 {p}
               </button>
@@ -197,12 +197,16 @@ export function AssistantPage() {
               placeholder="说点什么，比如「我最近作品集多了一组插画」"
               className="flex-1 h-11 px-md bg-bone-cream-dim border border-ash-veil text-body placeholder:text-warm-ash focus:border-linghuo-amber focus:ring-1 focus:ring-linghuo-amber outline-none"
             />
-            <Button type="submit" disabled={!text.trim() || pending}>
-              <Icon name="send" size={16} />
+            <Button
+              type="submit"
+              size="lg"
+              className="min-w-[60px] px-5 text-[15px]"
+              disabled={!text.trim() || pending}
+            >
               发送
             </Button>
           </form>
-          <p className="text-label text-warm-ash">
+          <p className="text-label text-graphite opacity-60">
             助手不直接改写正式资料；它只生成草案，确认权一直在你这里。
           </p>
         </div>
