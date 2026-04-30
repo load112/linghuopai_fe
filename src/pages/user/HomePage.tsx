@@ -61,7 +61,6 @@ export function UserHomePage() {
           <div>
             <h1 className="font-headline text-headline text-deep-char">
               你好，{nickname}
-              <span className="text-red-600 ml-2">[已刷新]</span>
             </h1>
             <p className="text-body text-graphite mt-md max-w-body leading-[1.7]">
               你的画像已更新，AI 为你找到了 {recommended.length} 个匹配岗位。继续完善资料，获得更精准的推荐。
@@ -142,31 +141,33 @@ export function UserHomePage() {
               onClick={() => navigate(`/u/tasks/${t.id}`)}
               className="p-md md:p-lg cursor-pointer"
             >
-              <div className="grid grid-cols-icon-body gap-x-sm gap-y-1 mb-sm">
-                <div className="h-10 w-10 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden row-span-2">
+              <div className="flex gap-sm mb-sm">
+                <div className="h-10 w-10 shrink-0 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
                     <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
                   </svg>
                 </div>
-                <div className="flex items-baseline justify-between gap-sm min-w-0">
-                  <h3 className="font-title text-title text-deep-char truncate">
-                    {t.title}
-                  </h3>
-                  <div className="text-right shrink-0">
-                    <span className="block text-title text-graphite tabular-nums">
-                      {t.budget}
-                    </span>
-                    <span className="text-label text-warm-ash">
-                      {t.budgetType}
-                    </span>
+                <div className="flex-1 min-w-0 space-y-1">
+                  <div className="flex items-baseline justify-between gap-sm">
+                    <h3 className="font-title text-title text-deep-char truncate">
+                      {t.title}
+                    </h3>
+                    <div className="text-right shrink-0">
+                      <span className="block text-title text-graphite tabular-nums">
+                        {t.budget}
+                      </span>
+                      <span className="text-label text-warm-ash">
+                        {t.budgetType}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-wrap gap-xs">
-                  {t.tags.map((tag) => (
-                    <Badge key={tag} tone="graphite">
-                      {tag}
-                    </Badge>
-                  ))}
+                  <div className="flex flex-wrap gap-xs">
+                    {t.tags.map((tag) => (
+                      <Badge key={tag} tone="graphite">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
               {t.matchHint ? (

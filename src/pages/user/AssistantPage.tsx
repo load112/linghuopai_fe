@@ -119,7 +119,7 @@ export function AssistantPage() {
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-[15px] font-normal leading-[1.8] tracking-[-0.2px] break-words">{m.text}</p>
+                <p className="text-[15px] font-normal leading-[1.6] break-words">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
@@ -206,7 +206,7 @@ export function AssistantPage() {
               发送
             </Button>
           </form>
-          <p className="text-[12px] font-medium text-graphite">
+          <p className="text-label text-graphite">
             助手不直接改写正式资料；它只生成草案，确认权一直在你这里。
           </p>
         </div>
