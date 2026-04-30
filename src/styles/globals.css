@@ -41,6 +41,10 @@
 }
 
 @layer utilities {
+  .grid-cols-icon-body {
+    grid-template-columns: 40px 1fr;
+  }
+
   .ease-out-quart {
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   }

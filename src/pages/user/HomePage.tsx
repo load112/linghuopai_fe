@@ -141,7 +141,7 @@ export function UserHomePage() {
               onClick={() => navigate(`/u/tasks/${t.id}`)}
               className="p-md md:p-lg cursor-pointer"
             >
-              <div className="grid grid-cols-[40px_1fr] gap-x-sm gap-y-1 mb-sm">
+              <div className="grid grid-cols-icon-body gap-x-sm gap-y-1 mb-sm">
                 <div className="h-10 w-10 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden row-span-2">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
                     <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
