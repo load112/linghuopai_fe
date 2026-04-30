@@ -152,9 +152,12 @@ export function UserHomePage() {
                     <h3 className="font-title text-title text-deep-char truncate leading-tight">
                       {t.title}
                     </h3>
-                    <div className="text-right shrink-0 leading-none">
-                      <span className="block text-title text-graphite tabular-nums leading-tight">
+                    <div className="text-right shrink-0 flex items-baseline gap-1">
+                      <span className="text-title text-graphite tabular-nums leading-tight">
                         {t.budget}
+                      </span>
+                      <span className="text-label text-warm-ash">
+                        {t.budgetType}
                       </span>
                     </div>
                   </div>
