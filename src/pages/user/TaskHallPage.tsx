@@ -98,7 +98,7 @@ export function TaskHallPage() {
             >
               {f.label}
               {active === f.key ? (
-                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-1/2 bg-linghuo-amber" />
+                <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-linghuo-amber" />
               ) : null}
             </button>
           ))}
@@ -156,7 +156,7 @@ export function TaskHallPage() {
                   {t.publisher}
                 </p>
               </div>
-              <Badge tone={t.source === "enterprise" ? "slate" : "graphite"}>
+              <Badge tone="graphite">
                 {t.source === "enterprise" ? "企业发布" : "个人发布"}
               </Badge>
             </div>
@@ -169,15 +169,15 @@ export function TaskHallPage() {
               ))}
             </div>
 
-            <div className="mt-auto flex items-end justify-between">
-              <div>
+            <div className="mt-auto flex justify-between items-baseline">
+              <div className="space-y-0.5">
                 <p className="text-label text-warm-ash">{t.budgetType}</p>
                 <p className="text-graphite font-headline text-title">
                   {t.budget}
                 </p>
               </div>
               {t.matchScore ? (
-                <div className="text-right">
+                <div className="text-right space-y-0.5">
                   <p className="text-label text-graphite">AI 匹配度</p>
                   <p className="font-headline text-title text-misty-slate">
                     {t.matchScore}%

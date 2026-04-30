@@ -35,7 +35,7 @@ export function MePage() {
           <h2 className="font-headline text-headline text-deep-char">
             {nickname}
           </h2>
-          <p className="text-label text-graphite mt-xs">
+          <p className="text-label text-graphite mt-sm leading-[1.5]">
             {session?.phone ? `手机号 ${session.phone}` : "已登录"}
           </p>
         </div>
@@ -81,7 +81,7 @@ export function MePage() {
 
       <Card tone="warm" className="p-md md:p-md md:p-lg">
         <h3 className="font-title text-title text-deep-char">敬请期待</h3>
-        <p className="text-body text-graphite mt-xs">
+        <p className="text-body text-graphite mt-xs leading-[1.7]">
           这些能力即将开放，仅展示，不可点。
         </p>
         <ul className="mt-md grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-sm">
@@ -93,8 +93,8 @@ export function MePage() {
               aria-disabled
             >
               <Icon name={m.icon} className="text-warm-ash" size={22} />
-              <p className="text-label text-graphite mt-xs">{m.name}</p>
-              <p className="text-label text-warm-ash mt-1 uppercase tracking-widest">
+              <p className="text-label text-graphite mt-xs font-medium">{m.name}</p>
+              <p className="text-label text-warm-ash mt-1 uppercase tracking-widest opacity-50">
                 即将开放
               </p>
             </li>

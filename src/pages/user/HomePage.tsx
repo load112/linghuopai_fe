@@ -141,30 +141,34 @@ export function UserHomePage() {
               onClick={() => navigate(`/u/tasks/${t.id}`)}
               className="p-md md:p-lg cursor-pointer"
             >
-              <div className="flex justify-between items-start mb-sm">
-                <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden">
+              <div className="flex gap-sm items-start mb-md">
+                <div className="h-12 w-12 border border-ash-veil bg-bone-cream flex items-center justify-center text-deep-char overflow-hidden shrink-0">
                   <svg viewBox="0 0 32 32" width={28} height={28} aria-hidden>
                     <rect x="6" y="6" width="20" height="20" fill="oklch(75% 0.005 60)" />
                   </svg>
                 </div>
-                <div className="text-right">
-                  <span className="block text-title text-graphite tabular-nums">
-                    {t.budget}
-                  </span>
-                  <span className="text-label text-graphite">
-                    {t.budgetType}
-                  </span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline justify-between gap-sm">
+                    <h3 className="font-title text-title text-deep-char truncate">
+                      {t.title}
+                    </h3>
+                    <div className="text-right shrink-0">
+                      <span className="block text-title text-graphite tabular-nums">
+                        {t.budget}
+                      </span>
+                      <span className="text-label text-warm-ash">
+                        {t.budgetType}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-xs mt-1">
+                    {t.tags.map((tag) => (
+                      <Badge key={tag} tone="graphite">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <h3 className="font-title text-title text-deep-char mb-xs">
-                {t.title}
-              </h3>
-              <div className="flex flex-wrap gap-xs mb-md">
-                {t.tags.map((tag) => (
-                  <Badge key={tag} tone="graphite">
-                    {tag}
-                  </Badge>
-                ))}
               </div>
               {t.matchHint ? (
                 <div className="bg-bone-cream-dim border border-ash-veil p-sm flex gap-sm items-start">
@@ -174,7 +178,7 @@ export function UserHomePage() {
                     size={16}
                     className="text-graphite mt-0.5 shrink-0"
                   />
-                  <p className="text-label text-graphite leading-relaxed">
+                  <p className="text-[15px] font-normal text-graphite leading-[1.7]">
                     "{t.matchHint}"
                   </p>
                 </div>
