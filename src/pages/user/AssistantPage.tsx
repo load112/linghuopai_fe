@@ -113,13 +113,13 @@ export function AssistantPage() {
               ) : null}
               <div
                 className={cn(
-                  "max-w-[75%] px-[18px] pt-4 pb-[18px] break-keep rounded-2xl shadow-ambient-hover",
+                  "max-w-[75%] px-[18px] pt-4 pb-[18px] rounded-2xl shadow-ambient-hover",
                   m.from === "ai"
                     ? "bg-[#F8F7F4] border border-ash-veil text-deep-char"
                     : "bg-white border border-ash-veil text-deep-char",
                 )}
               >
-                <p className="text-[15px] font-normal leading-[1.8] tracking-[-0.2px]">{m.text}</p>
+                <p className="text-[15px] font-normal leading-[1.8] tracking-[-0.2px] break-words">{m.text}</p>
                 {m.hint ? (
                   <p className="mt-2 text-label text-graphite opacity-60">{m.hint}</p>
                 ) : null}
