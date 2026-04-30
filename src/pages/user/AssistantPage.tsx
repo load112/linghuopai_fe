@@ -29,10 +29,10 @@ const initial: Bubble[] = [
 ];
 
 const quickPrompts = [
-  "帮我补全简历里的项目经验",
-  "推荐 3 个我可以接的远程任务",
-  "我最近想多接点插画类任务",
-  "帮我看看画像里还差什么",
+  "补全简历经验",
+  "推荐匹配任务",
+  "接插画类任务",
+  "查看画像缺口",
 ];
 
 export function AssistantPage() {
@@ -178,7 +178,7 @@ export function AssistantPage() {
                 key={p}
                 type="button"
                 onClick={() => send(p)}
-                className="px-md h-[46px] bg-bone-cream-dim border border-ash-veil text-[14px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left py-1"
+                className="px-md h-auto py-2.5 bg-bone-cream-dim border border-ash-veil text-[13px] font-normal text-graphite hover:bg-surface-container-low leading-tight text-left"
               >
                 {p}
               </button>
